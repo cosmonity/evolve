@@ -26,15 +26,7 @@ jobs:
           check-latest: true
           cache: true
           cache-dependency-path: go.sum
-      - uses: technote-space/get-diff-action@v6.1.2
-        id: git_diff
-        with:
-          PATTERNS: |
-            runtime/v2/*.go
-            runtime/v2/go.mod
-            runtime/v2/go.sum
-      - name: test & coverage report creation
-        if: env.GIT_DIFF
+      - name: test
         run: |
           cd runtime/v2 && go test -mod=readonly -race -timeout 30m
 
@@ -50,16 +42,7 @@ jobs:
           check-latest: true
           cache: true
           cache-dependency-path: go.sum
-      - uses: technote-space/get-diff-action@v6.1.2
-        id: git_diff
-        with:
-          PATTERNS: |
-            server/v2/*.go
-            server/v2/go.mod
-            server/v2/go.sum
-            server/v2/testdata/*.toml
-      - name: test & coverage report creation
-        if: env.GIT_DIFF
+      - name: test
         run: |
           cd server/v2 && go test -mod=readonly -race -timeout 30m
   stf:
@@ -74,15 +57,7 @@ jobs:
           check-latest: true
           cache: true
           cache-dependency-path: go.sum
-      - uses: technote-space/get-diff-action@v6.1.2
-        id: git_diff
-        with:
-          PATTERNS: |
-            server/v2/stf/**/*.go
-            server/v2/stf/go.mod
-            server/v2/stf/go.sum
-      - name: test & coverage report creation
-        if: env.GIT_DIFF
+      - name: test
         run: |
           cd server/v2/stf && go test -mod=readonly -race -timeout 30m
 
@@ -98,15 +73,7 @@ jobs:
           check-latest: true
           cache: true
           cache-dependency-path: go.sum
-      - uses: technote-space/get-diff-action@v6.1.2
-        id: git_diff
-        with:
-          PATTERNS: |
-            server/v2/appmanager/**/*.go
-            server/v2/appmanager/go.mod
-            server/v2/appmanager/go.sum
-      - name: test & coverage report creation
-        if: env.GIT_DIFF
+      - name: test
         run: |
           cd server/v2/appmanager && go test -mod=readonly -race -timeout 30m
 
@@ -122,15 +89,7 @@ jobs:
           check-latest: true
           cache: true
           cache-dependency-path: go.sum
-      - uses: technote-space/get-diff-action@v6.1.2
-        id: git_diff
-        with:
-          PATTERNS: |
-            server/v2/cometbft/**/*.go
-            server/v2/cometbft/go.mod
-            server/v2/cometbft/go.sum
-      - name: test & coverage report creation
-        if: env.GIT_DIFF
+      - name: test
         run: |
           cd server/v2/cometbft && go test -mod=readonly -race -timeout 30m
 
@@ -147,29 +106,9 @@ jobs:
           cache: true
           cache-dependency-path: |
             simapp/v2/go.sum
-            systemtest/go.sum
-      - uses: technote-space/get-diff-action@v6.1.2
-        id: git_diff
-        with:
-          PATTERNS: |
-            **/*.go
-            go.mod
-            go.sum
-            **/go.mod
-            **/go.sum
-            **/Makefile
-            Makefile
       - name: Install musl lib for simd (docker) binary
-        if: env.GIT_DIFF
         run: |
           sudo apt-get install -y musl
       - name: system tests v2
-        if: env.GIT_DIFF
         run: |
           make test-system
-      - uses: actions/upload-artifact@v4
-        if: failure()
-        with:
-          name: "testnet-setup"
-          path: ./systemtests/testnet/
-          retention-days: 3

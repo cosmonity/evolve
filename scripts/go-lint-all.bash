@@ -44,7 +44,7 @@ else
 
   if [[ $lint_sdk ]]; then
     cd "$REPO_ROOT"
-    echo "linting github.com/cosmos/cosmos-sdk [$(date -Iseconds -u)]"
+    echo "linting repo [$(date -Iseconds -u)]"
     golangci-lint run ./... -c "${REPO_ROOT}/.golangci.yml" "$@"
   fi
 fi
