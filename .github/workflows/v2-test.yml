@@ -36,7 +36,7 @@ jobs:
       - name: test & coverage report creation
         if: env.GIT_DIFF
         run: |
-          cd runtime/v2 && go test -mod=readonly -race -timeout 30m -tags='ledger test_ledger_mock'
+          cd runtime/v2 && go test -mod=readonly -race -timeout 30m
 
   server-v2:
     runs-on: ubuntu-latest
@@ -61,7 +61,7 @@ jobs:
       - name: test & coverage report creation
         if: env.GIT_DIFF
         run: |
-          cd server/v2 && go test -mod=readonly -race -timeout 30m -tags='ledger test_ledger_mock'
+          cd server/v2 && go test -mod=readonly -race -timeout 30m
   stf:
     runs-on: ubuntu-latest
     strategy:
@@ -84,7 +84,7 @@ jobs:
       - name: test & coverage report creation
         if: env.GIT_DIFF
         run: |
-          cd server/v2/stf && go test -mod=readonly -race -timeout 30m -tags='ledger test_ledger_mock'
+          cd server/v2/stf && go test -mod=readonly -race -timeout 30m
 
   appmanager:
     runs-on: ubuntu-latest
@@ -108,7 +108,7 @@ jobs:
       - name: test & coverage report creation
         if: env.GIT_DIFF
         run: |
-          cd server/v2/appmanager && go test -mod=readonly -race -timeout 30m -tags='ledger test_ledger_mock'
+          cd server/v2/appmanager && go test -mod=readonly -race -timeout 30m
 
   cometbft:
     runs-on: ubuntu-latest
@@ -132,7 +132,7 @@ jobs:
       - name: test & coverage report creation
         if: env.GIT_DIFF
         run: |
-          cd server/v2/cometbft && go test -mod=readonly -race -timeout 30m -tags='ledger test_ledger_mock'
+          cd server/v2/cometbft && go test -mod=readonly -race -timeout 30m
 
   test-system-v2:
     runs-on: ubuntu-latest

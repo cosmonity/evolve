@@ -5,7 +5,6 @@ queries:
   - uses: security-experimental
   - uses: security-extended
 paths-ignore:
-  - api
-  - '**/*_test.go'
-  - '**/*.pulsar.go'
-  - '**/*.pb.gp'
+  - "**/*_test.go"
+  - "**/*.pulsar.go"
+  - "**/*.pb.go"

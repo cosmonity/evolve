@@ -5,9 +5,6 @@ set -e
 REPO_ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." &>/dev/null && pwd)"
 export REPO_ROOT
 
-LINT_TAGS="e2e,ledger,test_ledger_mock"
-export LINT_TAGS
-
 lint_module() {
   local root="$1"
   shift
@@ -17,7 +14,7 @@ lint_module() {
     cd "$REPO_ROOT/$root"
   fi
   echo "linting $(grep "^module" go.mod) [$(date -Iseconds -u)]"
-  golangci-lint run ./... -c "${REPO_ROOT}/.golangci.yml" "$@" --build-tags=${LINT_TAGS}
+  golangci-lint run ./... -c "${REPO_ROOT}/.golangci.yml" "$@"
 }
 export -f lint_module
 
@@ -48,6 +45,6 @@ else
   if [[ $lint_sdk ]]; then
     cd "$REPO_ROOT"
     echo "linting github.com/cosmos/cosmos-sdk [$(date -Iseconds -u)]"
-    golangci-lint run ./... -c "${REPO_ROOT}/.golangci.yml" "$@" --build-tags=${LINT_TAGS}
+    golangci-lint run ./... -c "${REPO_ROOT}/.golangci.yml" "$@"
   fi
 fi

@@ -118,7 +118,6 @@ endif
 #? all: Run tools build
 all: build
 
-
 BUILD_TARGETS := build install
 
 #? build: Build simapp
@@ -141,25 +140,7 @@ $(BUILD_TARGETS): go.sum $(BUILDDIR)/
 $(BUILDDIR)/:
 	mkdir -p $(BUILDDIR)/
 
-#? cosmovisor: Build cosmovisor
-cosmovisor:
-	$(MAKE) -C tools/cosmovisor cosmovisor
-
-#? confix: Build confix
-confix:
-	$(MAKE) -C tools/confix confix
-
-#? hubl: Build hubl
-hubl:
-	$(MAKE) -C tools/hubl hubl
-
 .PHONY: build build-linux-amd64 build-linux-arm64 cosmovisor confix
-
-#? mocks: Generate mock file
-mocks: $(MOCKS_DIR)
-	@go install go.uber.org/mock/mockgen@v0.5.0
-	sh ./scripts/mockgen.sh
-.PHONY: mocks
 
 #? vulncheck: Run govulncheck
 vulncheck: $(BUILDDIR)/
@@ -168,16 +149,3 @@ vulncheck: $(BUILDDIR)/
 
 $(MOCKS_DIR):
 	mkdir -p $(MOCKS_DIR)
-
-#? distclean: Run `make clean` and `make tools-clean`
-distclean: clean
-
-#? clean: Clean some auto generated directory
-clean:
-	rm -rf \
-	$(BUILDDIR)/ \
-	artifacts/ \
-	tmp-swagger-gen/ \
-	.testnets
-
-.PHONY: distclean clean

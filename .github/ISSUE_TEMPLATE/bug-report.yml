@@ -32,13 +32,6 @@ body:
       value: "A bug happened!"
     validations:
       required: true
-  - type: input
-    attributes:
-      label: Cosmos SDK Version
-      description: If applicable, specify the version you're using
-      placeholder: 0.46, 0.47, main, etc.
-    validations:
-      required: true
   - type: textarea
     id: reproduce
     attributes:
