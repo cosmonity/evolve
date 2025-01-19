@@ -12,7 +12,6 @@ import (
 	"cosmossdk.io/core/transaction"
 	"cosmossdk.io/depinject"
 	"cosmossdk.io/log"
-	"cosmossdk.io/runtime/v2"
 	"cosmossdk.io/x/accounts"
 	basedepinject "cosmossdk.io/x/accounts/defaults/base/depinject"
 	lockupdepinject "cosmossdk.io/x/accounts/defaults/lockup/depinject"
@@ -28,6 +27,7 @@ import (
 	_ "cosmossdk.io/x/staking" // import as blank for app wiring
 	stakingkeeper "cosmossdk.io/x/staking/keeper"
 	stakingtypes "cosmossdk.io/x/staking/types"
+	"go.cosmonity.xyz/evolve/runtime/v2"
 
 	"github.com/cosmos/cosmos-sdk/crypto/keys/secp256k1"
 	"github.com/cosmos/cosmos-sdk/tests/integration/v2"

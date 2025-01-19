@@ -1,4 +1,4 @@
-module cosmossdk.io/server/v2/stf
+module go.cosmonity.xyz/evolve/server/v2/stf
 
 go 1.23
 

@@ -16,10 +16,10 @@ import (
 	"github.com/spf13/viper"
 
 	"cosmossdk.io/log"
-	serverv2 "cosmossdk.io/server/v2"
-	storev2 "cosmossdk.io/store/v2"
-	"cosmossdk.io/store/v2/snapshots"
-	"cosmossdk.io/store/v2/snapshots/types"
+	serverv2 "go.cosmonity.xyz/evolve/server/v2"
+	storev2 "go.cosmonity.xyz/evolve/store/v2"
+	"go.cosmonity.xyz/evolve/store/v2/snapshots"
+	"go.cosmonity.xyz/evolve/store/v2/snapshots/types"
 )
 
 const SnapshotFileName = "_snapshot"

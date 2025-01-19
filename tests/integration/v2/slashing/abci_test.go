@@ -8,10 +8,10 @@ import (
 
 	"cosmossdk.io/core/comet"
 	coreheader "cosmossdk.io/core/header"
-	"cosmossdk.io/runtime/v2/services"
 	"cosmossdk.io/x/slashing"
 	"cosmossdk.io/x/slashing/testutil"
 	stakingtestutil "cosmossdk.io/x/staking/testutil"
+	"go.cosmonity.xyz/evolve/runtime/v2/services"
 
 	"github.com/cosmos/cosmos-sdk/tests/integration/v2"
 	simtestutil "github.com/cosmos/cosmos-sdk/testutil/sims"

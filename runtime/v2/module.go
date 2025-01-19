@@ -27,9 +27,9 @@ import (
 	"cosmossdk.io/depinject"
 	"cosmossdk.io/depinject/appconfig"
 	"cosmossdk.io/log"
-	"cosmossdk.io/runtime/v2/services"
-	"cosmossdk.io/server/v2/stf"
-	"cosmossdk.io/store/v2/root"
+	"go.cosmonity.xyz/evolve/runtime/v2/services"
+	"go.cosmonity.xyz/evolve/server/v2/stf"
+	"go.cosmonity.xyz/evolve/store/v2/root"
 )
 
 var (

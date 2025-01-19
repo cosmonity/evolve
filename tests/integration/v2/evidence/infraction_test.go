@@ -15,7 +15,6 @@ import (
 	"cosmossdk.io/core/header"
 	"cosmossdk.io/depinject"
 	"cosmossdk.io/log"
-	"cosmossdk.io/runtime/v2/services"
 	_ "cosmossdk.io/x/accounts" // import as blank for app wiring
 	_ "cosmossdk.io/x/bank"     // import as blank for app wiring
 	bankkeeper "cosmossdk.io/x/bank/keeper"
@@ -32,6 +31,7 @@ import (
 	stakingkeeper "cosmossdk.io/x/staking/keeper"
 	stakingtestutil "cosmossdk.io/x/staking/testutil"
 	stakingtypes "cosmossdk.io/x/staking/types"
+	"go.cosmonity.xyz/evolve/runtime/v2/services"
 
 	"github.com/cosmos/cosmos-sdk/codec"
 	"github.com/cosmos/cosmos-sdk/crypto/keys/ed25519"

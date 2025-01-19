@@ -10,10 +10,10 @@ import (
 
 	corestore "cosmossdk.io/core/store"
 	coretesting "cosmossdk.io/core/testing"
-	"cosmossdk.io/store/v2"
-	"cosmossdk.io/store/v2/commitment"
-	"cosmossdk.io/store/v2/commitment/iavl"
-	dbm "cosmossdk.io/store/v2/db"
+	"go.cosmonity.xyz/evolve/store/v2"
+	"go.cosmonity.xyz/evolve/store/v2/commitment"
+	"go.cosmonity.xyz/evolve/store/v2/commitment/iavl"
+	dbm "go.cosmonity.xyz/evolve/store/v2/db"
 )
 
 var storeKeys = []string{"store1", "store2", "store3"}

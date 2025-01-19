@@ -12,7 +12,7 @@ func getCometBFTServerVersion() string {
 
 	var serverVersion string
 	for _, dep := range deps.Deps {
-		if dep.Path == "cosmossdk.io/server/v2/cometbft" {
+		if dep.Path == "go.cosmonity.xyz/evolve/server/v2/cometbft" {
 			if dep.Replace != nil && dep.Replace.Version != "(devel)" {
 				serverVersion = dep.Replace.Version
 			} else {

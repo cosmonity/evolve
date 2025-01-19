@@ -14,10 +14,10 @@ import (
 	appmodulev2 "cosmossdk.io/core/appmodule/v2"
 	"cosmossdk.io/core/transaction"
 	"cosmossdk.io/log"
-	serverv2 "cosmossdk.io/server/v2"
-	"cosmossdk.io/server/v2/api/grpc"
-	"cosmossdk.io/server/v2/store"
-	storev2 "cosmossdk.io/store/v2"
+	serverv2 "go.cosmonity.xyz/evolve/server/v2"
+	"go.cosmonity.xyz/evolve/server/v2/api/grpc"
+	"go.cosmonity.xyz/evolve/server/v2/store"
+	storev2 "go.cosmonity.xyz/evolve/store/v2"
 )
 
 type mockStore struct {

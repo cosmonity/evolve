@@ -7,7 +7,7 @@ import (
 	"github.com/cometbft/cometbft/crypto"
 	"github.com/stretchr/testify/require"
 
-	"cosmossdk.io/simapp/v2"
+	"go.cosmonity.xyz/evolve/simapp/v2"
 
 	"github.com/cosmos/cosmos-sdk/crypto/keys/secp256k1"
 	sdk "github.com/cosmos/cosmos-sdk/types"

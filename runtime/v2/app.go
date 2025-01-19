@@ -9,8 +9,8 @@ import (
 	"cosmossdk.io/core/transaction"
 	"cosmossdk.io/log"
 	"cosmossdk.io/schema/decoding"
-	"cosmossdk.io/server/v2/appmanager"
-	"cosmossdk.io/server/v2/stf"
+	"go.cosmonity.xyz/evolve/server/v2/appmanager"
+	"go.cosmonity.xyz/evolve/server/v2/stf"
 )
 
 // App is a wrapper around AppManager and ModuleManager that can be used in hybrid

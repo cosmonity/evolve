@@ -10,7 +10,7 @@ import (
 
 	corelog "cosmossdk.io/core/log"
 	corestore "cosmossdk.io/core/store"
-	"cosmossdk.io/store/v2/commitment"
+	"go.cosmonity.xyz/evolve/store/v2/commitment"
 )
 
 func TestCommitterSuite(t *testing.T) {

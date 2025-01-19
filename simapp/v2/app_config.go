@@ -36,7 +36,6 @@ import (
 	_ "cosmossdk.io/x/authz/module" // import for side-effects
 	_ "cosmossdk.io/x/bank"         // import for side-effects
 	banktypes "cosmossdk.io/x/bank/types"
-	_ "cosmossdk.io/x/bank/v2" // import for side-effects
 	_ "cosmossdk.io/x/circuit" // import for side-effects
 	circuittypes "cosmossdk.io/x/circuit/types"
 	_ "cosmossdk.io/x/consensus" // import for side-effects

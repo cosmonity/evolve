@@ -26,8 +26,8 @@ import (
 	"cosmossdk.io/core/server"
 	"cosmossdk.io/core/transaction"
 	errorsmod "cosmossdk.io/errors" // we aren't using errors/v2 as it doesn't support grpc status codes
-	"cosmossdk.io/server/v2/cometbft/handlers"
 	"cosmossdk.io/x/consensus/types"
+	"go.cosmonity.xyz/evolve/server/v2/cometbft/handlers"
 
 	cryptocodec "github.com/cosmos/cosmos-sdk/crypto/codec"
 	cryptotypes "github.com/cosmos/cosmos-sdk/crypto/types"

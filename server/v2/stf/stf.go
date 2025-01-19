@@ -19,8 +19,8 @@ import (
 	"cosmossdk.io/core/store"
 	"cosmossdk.io/core/transaction"
 	"cosmossdk.io/schema/appdata"
-	stfgas "cosmossdk.io/server/v2/stf/gas"
-	"cosmossdk.io/server/v2/stf/internal"
+	stfgas "go.cosmonity.xyz/evolve/server/v2/stf/gas"
+	"go.cosmonity.xyz/evolve/server/v2/stf/internal"
 )
 
 type eContextKey struct{}

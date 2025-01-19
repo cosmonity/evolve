@@ -1,20 +1,18 @@
-module cosmossdk.io/server/v2
+module go.cosmonity.xyz/evolve/server/v2
 
 go 1.23
 
 // server v2 integration (uncomment during development, but comment before release)
-// replace (
-// 	cosmossdk.io/server/v2/appmanager => ./appmanager
-// 	cosmossdk.io/store/v2 => ../../store/v2
-// )
+replace (
+	go.cosmonity.xyz/evolve/server/v2/appmanager => ./appmanager
+	go.cosmonity.xyz/evolve/store/v2 => ../../store/v2
+)
 
 require (
 	cosmossdk.io/api v0.8.2
 	cosmossdk.io/core v1.0.0
 	cosmossdk.io/core/testing v0.0.1
 	cosmossdk.io/log v1.5.0
-	cosmossdk.io/server/v2/appmanager v1.0.0-beta.2
-	cosmossdk.io/store/v2 v2.0.0-beta.1
 	github.com/cosmos/cosmos-proto v1.0.0-beta.5
 	github.com/cosmos/gogogateway v1.2.0
 	github.com/cosmos/gogoproto v1.7.0
@@ -32,6 +30,8 @@ require (
 	github.com/spf13/pflag v1.0.5
 	github.com/spf13/viper v1.19.0
 	github.com/stretchr/testify v1.10.0
+	go.cosmonity.xyz/evolve/server/v2/appmanager v1.0.0-beta.2
+	go.cosmonity.xyz/evolve/store/v2 v2.0.0-beta.1
 	google.golang.org/genproto/googleapis/api v0.0.0-20241015192408-796eee8c2d53
 	google.golang.org/grpc v1.69.4
 	google.golang.org/protobuf v1.36.3
@@ -43,7 +43,9 @@ require (
 	github.com/DataDog/datadog-go v4.8.3+incompatible // indirect
 	github.com/DataDog/zstd v1.5.5 // indirect
 	github.com/Microsoft/go-winio v0.6.1 // indirect
+	github.com/aybabtme/uniplot v0.0.0-20151203143629-039c559e5e7e // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
+	github.com/bvinc/go-sqlite-lite v0.6.1 // indirect
 	github.com/bytedance/sonic v1.12.6 // indirect
 	github.com/bytedance/sonic/loader v0.2.1 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
@@ -55,8 +57,10 @@ require (
 	github.com/cockroachdb/redact v1.1.5 // indirect
 	github.com/cockroachdb/tokenbucket v0.0.0-20230807174530-cc333fc44b06 // indirect
 	github.com/cosmos/iavl v1.3.4 // indirect
+	github.com/cosmos/iavl/v2 v2.0.0-alpha.4 // indirect
 	github.com/cosmos/ics23/go v0.11.0 // indirect
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
+	github.com/dustin/go-humanize v1.0.1 // indirect
 	github.com/emicklei/dot v1.6.2 // indirect
 	github.com/fatih/color v1.18.0 // indirect
 	github.com/fsnotify/fsnotify v1.8.0 // indirect
@@ -74,9 +78,9 @@ require (
 	github.com/jhump/protoreflect v1.17.0 // indirect
 	github.com/klauspost/compress v1.17.9 // indirect
 	github.com/klauspost/cpuid/v2 v2.2.9 // indirect
+	github.com/kocubinski/costor-api v1.1.1 // indirect
 	github.com/kr/pretty v0.3.1 // indirect
 	github.com/kr/text v0.2.0 // indirect
-	github.com/linxGnu/grocksdb v1.9.3 // indirect
 	github.com/magiconair/properties v1.8.9 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect

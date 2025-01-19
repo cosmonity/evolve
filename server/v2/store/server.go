@@ -8,9 +8,9 @@ import (
 
 	"cosmossdk.io/core/server"
 	"cosmossdk.io/core/transaction"
-	serverv2 "cosmossdk.io/server/v2"
-	storev2 "cosmossdk.io/store/v2"
-	"cosmossdk.io/store/v2/root"
+	serverv2 "go.cosmonity.xyz/evolve/server/v2"
+	storev2 "go.cosmonity.xyz/evolve/store/v2"
+	"go.cosmonity.xyz/evolve/store/v2/root"
 )
 
 var (

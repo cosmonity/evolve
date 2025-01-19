@@ -10,8 +10,8 @@ import (
 	"cosmossdk.io/core/server"
 	"cosmossdk.io/core/store"
 	"cosmossdk.io/core/transaction"
-	"cosmossdk.io/server/v2/cometbft/mempool"
 	consensustypes "cosmossdk.io/x/consensus/types"
+	"go.cosmonity.xyz/evolve/server/v2/cometbft/mempool"
 )
 
 type AppManager[T transaction.Tx] interface {

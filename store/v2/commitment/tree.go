@@ -7,7 +7,7 @@ import (
 	ics23 "github.com/cosmos/ics23/go"
 
 	corestore "cosmossdk.io/core/store"
-	snapshotstypes "cosmossdk.io/store/v2/snapshots/types"
+	snapshotstypes "go.cosmonity.xyz/evolve/store/v2/snapshots/types"
 )
 
 // ErrorExportDone is returned by Exporter.Next() when all items have been exported.

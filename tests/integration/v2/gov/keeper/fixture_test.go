@@ -11,7 +11,6 @@ import (
 	"cosmossdk.io/core/transaction"
 	"cosmossdk.io/depinject"
 	"cosmossdk.io/log"
-	"cosmossdk.io/runtime/v2"
 	_ "cosmossdk.io/x/accounts"
 	_ "cosmossdk.io/x/bank"
 	bankkeeper "cosmossdk.io/x/bank/keeper"
@@ -23,6 +22,7 @@ import (
 	_ "cosmossdk.io/x/protocolpool"
 	_ "cosmossdk.io/x/staking"
 	stakingkeeper "cosmossdk.io/x/staking/keeper"
+	"go.cosmonity.xyz/evolve/runtime/v2"
 
 	"github.com/cosmos/cosmos-sdk/tests/integration/v2"
 	"github.com/cosmos/cosmos-sdk/testutil/configurator"

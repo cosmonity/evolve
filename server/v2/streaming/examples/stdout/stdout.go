@@ -6,7 +6,7 @@ import (
 
 	"github.com/hashicorp/go-plugin"
 
-	"cosmossdk.io/server/v2/streaming"
+	"go.cosmonity.xyz/evolve/server/v2/streaming"
 )
 
 // StdoutPlugin is the implementation of the ABCIListener interface

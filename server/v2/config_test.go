@@ -7,10 +7,10 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	serverv2 "cosmossdk.io/server/v2"
-	"cosmossdk.io/server/v2/api/grpc"
-	"cosmossdk.io/server/v2/store"
-	"cosmossdk.io/store/v2/root"
+	serverv2 "go.cosmonity.xyz/evolve/server/v2"
+	"go.cosmonity.xyz/evolve/server/v2/api/grpc"
+	"go.cosmonity.xyz/evolve/server/v2/store"
+	"go.cosmonity.xyz/evolve/store/v2/root"
 )
 
 func TestReadConfig(t *testing.T) {

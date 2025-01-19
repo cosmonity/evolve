@@ -9,10 +9,10 @@ import (
 
 	corestore "cosmossdk.io/core/store"
 	coretesting "cosmossdk.io/core/testing"
-	"cosmossdk.io/store/v2"
-	"cosmossdk.io/store/v2/metrics"
-	"cosmossdk.io/store/v2/mock"
-	"cosmossdk.io/store/v2/pruning"
+	"go.cosmonity.xyz/evolve/store/v2"
+	"go.cosmonity.xyz/evolve/store/v2/metrics"
+	"go.cosmonity.xyz/evolve/store/v2/mock"
+	"go.cosmonity.xyz/evolve/store/v2/pruning"
 )
 
 func newTestRootStore(sc store.Committer) *Store {

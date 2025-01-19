@@ -5,7 +5,7 @@ import (
 
 	"cosmossdk.io/core/gas"
 	"cosmossdk.io/core/store"
-	stfgas "cosmossdk.io/server/v2/stf/gas"
+	stfgas "go.cosmonity.xyz/evolve/server/v2/stf/gas"
 )
 
 type (

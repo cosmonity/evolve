@@ -1,4 +1,4 @@
-module cosmossdk.io/store/v2
+module go.cosmonity.xyz/evolve/store/v2
 
 go 1.23
 

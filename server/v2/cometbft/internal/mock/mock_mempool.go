@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"cosmossdk.io/core/transaction"
-	"cosmossdk.io/server/v2/cometbft/mempool"
+	"go.cosmonity.xyz/evolve/server/v2/cometbft/mempool"
 )
 
 var _ mempool.Mempool[transaction.Tx] = (*MockMempool[transaction.Tx])(nil)

@@ -4,7 +4,7 @@ import (
 	"io"
 
 	corestore "cosmossdk.io/core/store"
-	"cosmossdk.io/store/v2/proof"
+	"go.cosmonity.xyz/evolve/store/v2/proof"
 )
 
 type VersionedReader interface {

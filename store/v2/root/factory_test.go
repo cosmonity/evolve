@@ -8,7 +8,7 @@ import (
 
 	corestore "cosmossdk.io/core/store"
 	coretesting "cosmossdk.io/core/testing"
-	"cosmossdk.io/store/v2/db"
+	"go.cosmonity.xyz/evolve/store/v2/db"
 )
 
 func TestFactory(t *testing.T) {

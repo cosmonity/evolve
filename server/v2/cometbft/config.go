@@ -4,7 +4,7 @@ import (
 	cmtcfg "github.com/cometbft/cometbft/config"
 
 	"cosmossdk.io/schema/indexer"
-	"cosmossdk.io/server/v2/cometbft/mempool"
+	"go.cosmonity.xyz/evolve/server/v2/cometbft/mempool"
 )
 
 // Config is the configuration for the CometBFT application

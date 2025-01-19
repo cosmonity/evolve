@@ -17,16 +17,16 @@ import (
 	"cosmossdk.io/core/transaction"
 	"cosmossdk.io/math"
 	"cosmossdk.io/math/unsafe"
-	runtimev2 "cosmossdk.io/runtime/v2"
-	serverv2 "cosmossdk.io/server/v2"
-	"cosmossdk.io/server/v2/api/grpc"
-	"cosmossdk.io/server/v2/api/grpcgateway"
-	"cosmossdk.io/server/v2/api/rest"
-	"cosmossdk.io/server/v2/api/telemetry"
-	"cosmossdk.io/server/v2/cometbft"
-	"cosmossdk.io/server/v2/store"
 	banktypes "cosmossdk.io/x/bank/types"
 	stakingtypes "cosmossdk.io/x/staking/types"
+	runtimev2 "go.cosmonity.xyz/evolve/runtime/v2"
+	serverv2 "go.cosmonity.xyz/evolve/server/v2"
+	"go.cosmonity.xyz/evolve/server/v2/api/grpc"
+	"go.cosmonity.xyz/evolve/server/v2/api/grpcgateway"
+	"go.cosmonity.xyz/evolve/server/v2/api/rest"
+	"go.cosmonity.xyz/evolve/server/v2/api/telemetry"
+	"go.cosmonity.xyz/evolve/server/v2/cometbft"
+	"go.cosmonity.xyz/evolve/server/v2/store"
 
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"
@@ -318,7 +318,7 @@ func initTestnetFiles[T transaction.Tx](
 			valStr,
 			valPubKeys[i],
 			sdk.NewCoin(args.bondTokenDenom, valTokens),
-			stakingtypes.NewDescription(nodeDirName, "", "", "", "", &stakingtypes.Metadata{}),
+			stakingtypes.NewDescription(nodeDirName, "", "", "", ""),
 			stakingtypes.NewCommissionRates(math.LegacyOneDec(), math.LegacyOneDec(), math.LegacyOneDec()),
 			math.OneInt(),
 		)

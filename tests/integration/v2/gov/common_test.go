@@ -16,7 +16,6 @@ import (
 	"cosmossdk.io/depinject"
 	sdklog "cosmossdk.io/log"
 	"cosmossdk.io/math"
-	"cosmossdk.io/runtime/v2"
 	_ "cosmossdk.io/x/accounts"
 	_ "cosmossdk.io/x/bank"
 	bankkeeper "cosmossdk.io/x/bank/keeper"
@@ -32,6 +31,7 @@ import (
 	_ "cosmossdk.io/x/staking"
 	stakingkeeper "cosmossdk.io/x/staking/keeper"
 	stakingtypes "cosmossdk.io/x/staking/types"
+	"go.cosmonity.xyz/evolve/runtime/v2"
 
 	"github.com/cosmos/cosmos-sdk/codec"
 	"github.com/cosmos/cosmos-sdk/crypto/keys/ed25519"
@@ -48,7 +48,7 @@ import (
 var (
 	valTokens           = sdk.TokensFromConsensusPower(42, sdk.DefaultPowerReduction)
 	TestProposal        = v1beta1.NewTextProposal("Test", "description")
-	TestDescription     = stakingtypes.NewDescription("T", "E", "S", "T", "Z", &stakingtypes.Metadata{})
+	TestDescription     = stakingtypes.NewDescription("T", "E", "S", "T", "Z")
 	TestCommissionRates = stakingtypes.NewCommissionRates(math.LegacyZeroDec(), math.LegacyZeroDec(), math.LegacyZeroDec())
 )
 

@@ -11,9 +11,9 @@ import (
 
 	"cosmossdk.io/core/log"
 	corestore "cosmossdk.io/core/store"
-	"cosmossdk.io/store/v2/commitment"
-	"cosmossdk.io/store/v2/internal/encoding"
-	"cosmossdk.io/store/v2/snapshots"
+	"go.cosmonity.xyz/evolve/store/v2/commitment"
+	"go.cosmonity.xyz/evolve/store/v2/internal/encoding"
+	"go.cosmonity.xyz/evolve/store/v2/snapshots"
 )
 
 const (

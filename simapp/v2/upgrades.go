@@ -5,9 +5,8 @@ import (
 
 	"cosmossdk.io/core/appmodule"
 	"cosmossdk.io/core/store"
-	"cosmossdk.io/runtime/v2"
-	bankv2types "cosmossdk.io/x/bank/v2/types"
 	upgradetypes "cosmossdk.io/x/upgrade/types"
+	"go.cosmonity.xyz/evolve/runtime/v2"
 )
 
 // UpgradeName defines the on-chain upgrade name for the sample SimApp upgrade
@@ -34,7 +33,7 @@ func (app *SimApp[T]) RegisterUpgradeHandlers() {
 	if upgradeInfo.Name == UpgradeName && !app.UpgradeKeeper.IsSkipHeight(upgradeInfo.Height) {
 		storeUpgrades := store.StoreUpgrades{
 			Added: []string{
-				bankv2types.ModuleName,
+				"stf",
 			},
 		}
 

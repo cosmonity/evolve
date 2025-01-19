@@ -9,7 +9,7 @@ import (
 	"cosmossdk.io/core/store"
 	errorsmod "cosmossdk.io/errors/v2"
 	"cosmossdk.io/schema/appdata"
-	"cosmossdk.io/server/v2/streaming"
+	"go.cosmonity.xyz/evolve/server/v2/streaming"
 )
 
 // streamDeliverBlockChanges will stream all the changes happened during deliver block.

@@ -6,7 +6,7 @@ import (
 	"os"
 
 	"cosmossdk.io/core/transaction"
-	"cosmossdk.io/simapp/v2/simdv2/cmd"
+	"go.cosmonity.xyz/evolve/simapp/v2/simdv2/cmd"
 )
 
 func main() {

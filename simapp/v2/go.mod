@@ -1,46 +1,40 @@
-module cosmossdk.io/simapp/v2
+module go.cosmonity.xyz/evolve/simapp/v2
 
 go 1.23.4
 
 require (
 	cosmossdk.io/api v0.8.2
-	cosmossdk.io/client/v2 v2.0.0-beta.6
+	cosmossdk.io/client/v2 v2.10.0-beta.1
 	cosmossdk.io/core v1.0.0
 	cosmossdk.io/depinject v1.1.0
 	cosmossdk.io/indexer/postgres v0.1.0
 	cosmossdk.io/log v1.5.0
 	cosmossdk.io/math v1.5.0
-	cosmossdk.io/runtime/v2 v2.0.0-00010101000000-000000000000
-	cosmossdk.io/server/v2 v2.0.0-beta.1
-	cosmossdk.io/server/v2/appmanager v1.0.0-beta.2
-	cosmossdk.io/server/v2/cometbft v0.0.0-20241015140036-ee3d320eaa55
-	cosmossdk.io/store/v2 v2.0.0
 	cosmossdk.io/tools/benchmark v0.2.0-rc.1
-	cosmossdk.io/tools/confix v0.0.0-00010101000000-000000000000
-	cosmossdk.io/x/accounts v0.0.0-20240913065641-0064ccbce64e
-	cosmossdk.io/x/accounts/defaults/base v0.0.0-00010101000000-000000000000
-	cosmossdk.io/x/accounts/defaults/lockup v0.0.0-00010101000000-000000000000
-	cosmossdk.io/x/accounts/defaults/multisig v0.0.0-00010101000000-000000000000
-	cosmossdk.io/x/authz v0.0.0-00010101000000-000000000000
-	cosmossdk.io/x/bank v0.0.0-20240226161501-23359a0b6d91
-	cosmossdk.io/x/circuit v0.0.0-20230613133644-0a778132a60f
-	cosmossdk.io/x/consensus v0.0.0-00010101000000-000000000000
-	cosmossdk.io/x/distribution v0.0.0-20230925135524-a1bc045b3190
-	cosmossdk.io/x/epochs v0.0.0-20240522060652-a1ae4c3e0337
-	cosmossdk.io/x/evidence v0.0.0-20230613133644-0a778132a60f
-	cosmossdk.io/x/feegrant v0.0.0-20230613133644-0a778132a60f
-	cosmossdk.io/x/gov v0.0.0-20231113122742-912390d5fc4a
-	cosmossdk.io/x/group v0.0.0-00010101000000-000000000000
-	cosmossdk.io/x/mint v0.0.0-00010101000000-000000000000
-	cosmossdk.io/x/nft v0.0.0-20230613133644-0a778132a60f
-	cosmossdk.io/x/protocolpool v0.0.0-20230925135524-a1bc045b3190
-	cosmossdk.io/x/slashing v0.0.0-00010101000000-000000000000
-	cosmossdk.io/x/staking v0.0.0-00010101000000-000000000000
-	cosmossdk.io/x/upgrade v0.0.0-20230613133644-0a778132a60f
+	cosmossdk.io/tools/confix v0.2.0-rc.2
+	cosmossdk.io/x/accounts v0.2.0-rc.1
+	cosmossdk.io/x/accounts/defaults/base v0.2.0-rc.1
+	cosmossdk.io/x/accounts/defaults/lockup v0.2.0-rc.1
+	cosmossdk.io/x/accounts/defaults/multisig v0.2.0-rc.1
+	cosmossdk.io/x/authz v0.2.0-rc.1
+	cosmossdk.io/x/bank v0.2.0-rc.1
+	cosmossdk.io/x/circuit v0.2.0-rc.1
+	cosmossdk.io/x/consensus v0.2.0-rc.1
+	cosmossdk.io/x/distribution v0.2.0-rc.1
+	cosmossdk.io/x/epochs v0.2.0-rc.1
+	cosmossdk.io/x/evidence v0.2.0-rc.1
+	cosmossdk.io/x/feegrant v0.2.0-rc.1
+	cosmossdk.io/x/gov v0.2.0-rc.1
+	cosmossdk.io/x/group v0.2.0-rc.1
+	cosmossdk.io/x/mint v0.2.0-rc.1
+	cosmossdk.io/x/nft v0.2.0-rc.1
+	cosmossdk.io/x/protocolpool v0.2.0-rc.1
+	cosmossdk.io/x/slashing v0.2.0-rc.1
+	cosmossdk.io/x/staking v0.2.0-rc.1
+	cosmossdk.io/x/upgrade v0.2.0-rc.1
 	github.com/cometbft/cometbft v1.0.0
 	github.com/cometbft/cometbft/api v1.0.0
-	// this version is not used as it is always replaced by the latest Cosmos SDK version
-	github.com/cosmos/cosmos-sdk v0.53.0
+	github.com/cosmos/cosmos-sdk v0.52.0
 	github.com/cosmos/iavl/v2 v2.0.0-alpha.4 // indirect
 	github.com/jackc/pgx/v5 v5.7.2
 	github.com/spf13/cast v1.7.1 // indirect
@@ -48,6 +42,11 @@ require (
 	github.com/spf13/pflag v1.0.5
 	github.com/spf13/viper v1.19.0
 	github.com/stretchr/testify v1.10.0
+	go.cosmonity.xyz/evolve/runtime/v2 v2.0.0-00010101000000-000000000000
+	go.cosmonity.xyz/evolve/server/v2 v2.0.0-beta.1
+	go.cosmonity.xyz/evolve/server/v2/appmanager v1.0.0-beta.2
+	go.cosmonity.xyz/evolve/server/v2/cometbft v0.0.0-20241015140036-ee3d320eaa55
+	go.cosmonity.xyz/evolve/store/v2 v2.0.0
 	google.golang.org/protobuf v1.36.3
 )
 
@@ -65,9 +64,8 @@ require (
 	cosmossdk.io/errors v1.0.1 // indirect
 	cosmossdk.io/errors/v2 v2.0.0 // indirect
 	cosmossdk.io/schema v1.0.0 // indirect
-	cosmossdk.io/server/v2/stf v1.0.0-beta.2 // indirect
 	cosmossdk.io/store v1.10.0-rc.1.0.20241218084712-ca559989da43 // indirect
-	cosmossdk.io/x/tx v1.0.0 // indirect
+	cosmossdk.io/x/tx v1.0.1 // indirect
 	filippo.io/edwards25519 v1.1.0 // indirect
 	github.com/99designs/go-keychain v0.0.0-20191008050251-8e49817e8af4 // indirect
 	github.com/99designs/keyring v1.2.2 // indirect
@@ -102,7 +100,7 @@ require (
 	github.com/cosmos/go-bip39 v1.0.0 // indirect
 	github.com/cosmos/gogogateway v1.2.0 // indirect
 	github.com/cosmos/gogoproto v1.7.0 // indirect
-	github.com/cosmos/iavl v1.3.4 // indirect
+	github.com/cosmos/iavl v1.3.5 // indirect
 	github.com/cosmos/ics23/go v0.11.0 // indirect
 	github.com/cosmos/ledger-cosmos-go v0.14.0 // indirect
 	github.com/creachadair/atomicfile v0.3.7 // indirect
@@ -127,6 +125,7 @@ require (
 	github.com/gogo/googleapis v1.4.1 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/golang/groupcache v0.0.0-20241129210726-2c02b8208cf8 // indirect
+	github.com/golang/mock v1.6.0 // indirect
 	github.com/golang/protobuf v1.5.4 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/google/btree v1.1.3 // indirect
@@ -137,6 +136,8 @@ require (
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/googleapis/enterprise-certificate-proxy v0.3.4 // indirect
 	github.com/googleapis/gax-go/v2 v2.14.1 // indirect
+	github.com/gorilla/handlers v1.5.2 // indirect
+	github.com/gorilla/mux v1.8.1 // indirect
 	github.com/gorilla/websocket v1.5.3 // indirect
 	github.com/grpc-ecosystem/go-grpc-middleware v1.4.0 // indirect
 	github.com/grpc-ecosystem/grpc-gateway v1.16.0 // indirect
@@ -211,9 +212,10 @@ require (
 	github.com/twitchyliquid64/golang-asm v0.15.1 // indirect
 	github.com/ulikunitz/xz v0.5.12 // indirect
 	github.com/zondax/hid v0.9.2 // indirect
-	github.com/zondax/ledger-go v0.14.3 // indirect
+	github.com/zondax/ledger-go v1.0.0 // indirect
 	gitlab.com/yawning/secp256k1-voi v0.0.0-20230925100816-f2616030848b // indirect
 	gitlab.com/yawning/tuplehash v0.0.0-20230713102510-df83abbf9a02 // indirect
+	go.cosmonity.xyz/evolve/server/v2/stf v1.0.0-beta.2 // indirect
 	go.etcd.io/bbolt v1.4.0-alpha.1 // indirect
 	go.opencensus.io v0.24.0 // indirect
 	go.opentelemetry.io/auto/sdk v1.1.0 // indirect
@@ -222,7 +224,6 @@ require (
 	go.opentelemetry.io/otel v1.33.0 // indirect
 	go.opentelemetry.io/otel/metric v1.33.0 // indirect
 	go.opentelemetry.io/otel/trace v1.33.0 // indirect
-	go.uber.org/mock v0.5.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	golang.org/x/arch v0.12.0 // indirect
 	golang.org/x/crypto v0.32.0 // indirect
@@ -254,40 +255,12 @@ require (
 // replace (
 // 	<temporary replace>
 // )
-
-// SimApp on main always tests the latest extracted SDK modules importing the sdk
-replace (
-	cosmossdk.io/client/v2 => ../../client/v2
-	cosmossdk.io/tools/benchmark => ../../tools/benchmark
-	cosmossdk.io/tools/confix => ../../tools/confix
-	cosmossdk.io/x/accounts => ../../x/accounts
-	cosmossdk.io/x/accounts/defaults/base => ../../x/accounts/defaults/base
-	cosmossdk.io/x/accounts/defaults/lockup => ../../x/accounts/defaults/lockup
-	cosmossdk.io/x/accounts/defaults/multisig => ../../x/accounts/defaults/multisig
-	cosmossdk.io/x/authz => ../../x/authz
-	cosmossdk.io/x/bank => ../../x/bank
-	cosmossdk.io/x/circuit => ../../x/circuit
-	cosmossdk.io/x/consensus => ../../x/consensus
-	cosmossdk.io/x/distribution => ../../x/distribution
-	cosmossdk.io/x/epochs => ../../x/epochs
-	cosmossdk.io/x/evidence => ../../x/evidence
-	cosmossdk.io/x/feegrant => ../../x/feegrant
-	cosmossdk.io/x/gov => ../../x/gov
-	cosmossdk.io/x/group => ../../x/group
-	cosmossdk.io/x/mint => ../../x/mint
-	cosmossdk.io/x/nft => ../../x/nft
-	cosmossdk.io/x/protocolpool => ../../x/protocolpool
-	cosmossdk.io/x/slashing => ../../x/slashing
-	cosmossdk.io/x/staking => ../../x/staking
-	cosmossdk.io/x/upgrade => ../../x/upgrade
-)
+replace github.com/cosmos/cosmos-sdk => github.com/cosmos/cosmos-sdk v0.52.0-rc.1.0.20250117223216-2dc4cd5876ba
 
 // Below are the long-lived replace of the SimApp
 replace (
 	// use cosmos fork of keyring
 	github.com/99designs/keyring => github.com/cosmos/keyring v1.2.0
-	// Simapp always use the latest version of the cosmos-sdk
-	github.com/cosmos/cosmos-sdk => ../../.
 	// Fix upstream GHSA-h395-qcrw-5vmq and GHSA-3vp4-m3rf-835h vulnerabilities.
 	// TODO Remove it: https://github.com/cosmos/cosmos-sdk/issues/10409
 	github.com/gin-gonic/gin => github.com/gin-gonic/gin v1.9.1
@@ -297,13 +270,11 @@ replace (
 
 // server v2 integration
 replace (
-	cosmossdk.io/core/testing => ../../core/testing
-	cosmossdk.io/indexer/postgres => ../../indexer/postgres
-	cosmossdk.io/runtime/v2 => ../../runtime/v2
-	cosmossdk.io/server/v2 => ../../server/v2
-	cosmossdk.io/server/v2/appmanager => ../../server/v2/appmanager
-	cosmossdk.io/server/v2/cometbft => ../../server/v2/cometbft
-	cosmossdk.io/server/v2/stf => ../../server/v2/stf
-	cosmossdk.io/store/v2 => ../../store/v2
+	go.cosmonity.xyz/evolve/runtime/v2 => ../../runtime/v2
+	go.cosmonity.xyz/evolve/server/v2 => ../../server/v2
+	go.cosmonity.xyz/evolve/server/v2/appmanager => ../../server/v2/appmanager
+	go.cosmonity.xyz/evolve/server/v2/cometbft => ../../server/v2/cometbft
+	go.cosmonity.xyz/evolve/server/v2/stf => ../../server/v2/stf
+	go.cosmonity.xyz/evolve/store/v2 => ../../store/v2
 
 )

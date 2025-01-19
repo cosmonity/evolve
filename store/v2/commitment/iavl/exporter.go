@@ -5,8 +5,8 @@ import (
 
 	"github.com/cosmos/iavl"
 
-	"cosmossdk.io/store/v2/commitment"
-	snapshotstypes "cosmossdk.io/store/v2/snapshots/types"
+	"go.cosmonity.xyz/evolve/store/v2/commitment"
+	snapshotstypes "go.cosmonity.xyz/evolve/store/v2/snapshots/types"
 )
 
 // Exporter is a wrapper around iavl.Exporter.

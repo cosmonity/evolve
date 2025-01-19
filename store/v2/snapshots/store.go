@@ -18,8 +18,8 @@ import (
 
 	corestore "cosmossdk.io/core/store"
 	"cosmossdk.io/errors/v2"
-	storeerrors "cosmossdk.io/store/v2/errors"
-	"cosmossdk.io/store/v2/snapshots/types"
+	storeerrors "go.cosmonity.xyz/evolve/store/v2/errors"
+	"go.cosmonity.xyz/evolve/store/v2/snapshots/types"
 )
 
 const (

@@ -9,7 +9,6 @@ import (
 	"cosmossdk.io/core/header"
 	"cosmossdk.io/math"
 	banktestutil "cosmossdk.io/x/bank/testutil"
-	"cosmossdk.io/x/staking/keeper"
 	"cosmossdk.io/x/staking/testutil"
 	"cosmossdk.io/x/staking/types"
 
@@ -49,7 +48,7 @@ func TestUnbondingDelegationsMaxEntries(t *testing.T) {
 	validator, issuedShares := validator.AddTokensFromDel(startTokens)
 	assert.DeepEqual(t, startTokens, issuedShares.RoundInt())
 
-	validator, _ = keeper.TestingUpdateValidatorV2(f.stakingKeeper, ctx, validator, true)
+	validator, _ = testingUpdateValidatorV2(f.stakingKeeper, ctx, validator, true)
 	assert.Assert(math.IntEq(t, startTokens, validator.BondedTokens()))
 	assert.Assert(t, validator.IsBonded())
 

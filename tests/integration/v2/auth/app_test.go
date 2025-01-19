@@ -11,9 +11,6 @@ import (
 	"cosmossdk.io/core/transaction"
 	"cosmossdk.io/depinject"
 	"cosmossdk.io/log"
-	"cosmossdk.io/runtime/v2"
-	"cosmossdk.io/runtime/v2/services"
-	"cosmossdk.io/server/v2/stf"
 	"cosmossdk.io/x/accounts"
 	basedepinject "cosmossdk.io/x/accounts/defaults/base/depinject"
 	accountsv1 "cosmossdk.io/x/accounts/v1"
@@ -22,6 +19,9 @@ import (
 	banktypes "cosmossdk.io/x/bank/types"
 	_ "cosmossdk.io/x/consensus" // import as blank for app wiring
 	_ "cosmossdk.io/x/staking"   // import as blank for app wirings
+	"go.cosmonity.xyz/evolve/runtime/v2"
+	"go.cosmonity.xyz/evolve/runtime/v2/services"
+	"go.cosmonity.xyz/evolve/server/v2/stf"
 
 	"github.com/cosmos/cosmos-sdk/tests/integration/v2"
 	"github.com/cosmos/cosmos-sdk/testutil/configurator"

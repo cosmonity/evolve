@@ -13,8 +13,8 @@ import (
 	"cosmossdk.io/core/server"
 	"cosmossdk.io/core/transaction"
 	"cosmossdk.io/log"
-	serverv2 "cosmossdk.io/server/v2"
-	"cosmossdk.io/server/v2/appmanager"
+	serverv2 "go.cosmonity.xyz/evolve/server/v2"
+	"go.cosmonity.xyz/evolve/server/v2/appmanager"
 )
 
 var (

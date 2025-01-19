@@ -15,8 +15,8 @@ import (
 	"github.com/stretchr/testify/require"
 
 	coretesting "cosmossdk.io/core/testing"
-	"cosmossdk.io/store/v2/snapshots"
-	snapshotstypes "cosmossdk.io/store/v2/snapshots/types"
+	"go.cosmonity.xyz/evolve/store/v2/snapshots"
+	snapshotstypes "go.cosmonity.xyz/evolve/store/v2/snapshots/types"
 )
 
 func checksums(slice [][]byte) [][]byte {

@@ -8,7 +8,7 @@ import (
 
 	appmodulev2 "cosmossdk.io/core/appmodule/v2"
 	"cosmossdk.io/core/transaction"
-	"cosmossdk.io/server/v2/stf"
+	"go.cosmonity.xyz/evolve/server/v2/stf"
 )
 
 // MockModule implements both HasMsgHandlers and HasQueryHandlers

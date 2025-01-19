@@ -18,7 +18,7 @@ import (
 	"github.com/spf13/cobra"
 	"sigs.k8s.io/yaml"
 
-	"cosmossdk.io/server/v2/cometbft/client/rpc"
+	"go.cosmonity.xyz/evolve/server/v2/cometbft/client/rpc"
 
 	"github.com/cosmos/cosmos-sdk/client"
 	cryptocodec "github.com/cosmos/cosmos-sdk/crypto/codec"

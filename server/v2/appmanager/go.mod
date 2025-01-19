@@ -1,4 +1,4 @@
-module cosmossdk.io/server/v2/appmanager
+module go.cosmonity.xyz/evolve/v2/appmanager
 
 go 1.23
 

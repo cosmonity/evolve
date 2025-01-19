@@ -46,7 +46,7 @@ func TestCancelUnbondingDelegation(t *testing.T) {
 	delegatorAddr := addrs[1]
 
 	// setup a new validator with bonded status
-	validator, err := types.NewValidator(valAddr.String(), PKs[0], types.NewDescription("Validator", "", "", "", "", &types.Metadata{}))
+	validator, err := types.NewValidator(valAddr.String(), PKs[0], types.NewDescription("Validator", "", "", "", ""))
 	validator.Status = types.Bonded
 	assert.NilError(t, err)
 	assert.NilError(t, f.stakingKeeper.SetValidator(ctx, validator))

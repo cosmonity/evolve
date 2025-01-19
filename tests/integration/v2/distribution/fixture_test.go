@@ -13,7 +13,6 @@ import (
 	"cosmossdk.io/core/transaction"
 	"cosmossdk.io/depinject"
 	"cosmossdk.io/log"
-	"cosmossdk.io/runtime/v2"
 	_ "cosmossdk.io/x/accounts" // import as blank for app wiring
 	_ "cosmossdk.io/x/bank"     // import as blank for app wiring
 	bankkeeper "cosmossdk.io/x/bank/keeper"
@@ -26,6 +25,7 @@ import (
 	poolkeeper "cosmossdk.io/x/protocolpool/keeper"
 	_ "cosmossdk.io/x/staking" // import as blank for app wiring
 	stakingkeeper "cosmossdk.io/x/staking/keeper"
+	"go.cosmonity.xyz/evolve/runtime/v2"
 
 	"github.com/cosmos/cosmos-sdk/codec"
 	"github.com/cosmos/cosmos-sdk/tests/integration/v2"

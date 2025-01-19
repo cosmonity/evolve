@@ -5,8 +5,8 @@ import (
 
 	"cosmossdk.io/core/address"
 	"cosmossdk.io/core/registry"
-	"cosmossdk.io/runtime/v2"
-	serverv2 "cosmossdk.io/server/v2"
+	"go.cosmonity.xyz/evolve/runtime/v2"
+	serverv2 "go.cosmonity.xyz/evolve/server/v2"
 
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/config"

@@ -7,8 +7,8 @@ import (
 	gogotypes "github.com/cosmos/gogoproto/types"
 
 	corestore "cosmossdk.io/core/store"
-	"cosmossdk.io/store/v2/internal/encoding"
-	"cosmossdk.io/store/v2/proof"
+	"go.cosmonity.xyz/evolve/store/v2/internal/encoding"
+	"go.cosmonity.xyz/evolve/store/v2/proof"
 )
 
 const (

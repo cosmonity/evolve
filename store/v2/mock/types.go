@@ -1,6 +1,6 @@
 package mock
 
-import "cosmossdk.io/store/v2"
+import "go.cosmonity.xyz/evolve/store/v2"
 
 // StateCommitter is a mock of store.Committer
 type StateCommitter interface {

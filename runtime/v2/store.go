@@ -5,8 +5,8 @@ import (
 	"fmt"
 
 	"cosmossdk.io/core/store"
-	"cosmossdk.io/server/v2/stf"
-	storev2 "cosmossdk.io/store/v2"
+	"go.cosmonity.xyz/evolve/server/v2/stf"
+	storev2 "go.cosmonity.xyz/evolve/store/v2"
 )
 
 // NewKVStoreService creates a new KVStoreService.

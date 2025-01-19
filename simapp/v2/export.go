@@ -3,8 +3,8 @@ package simapp
 import (
 	"context"
 
-	"cosmossdk.io/runtime/v2/services"
 	"cosmossdk.io/x/staking"
+	"go.cosmonity.xyz/evolve/runtime/v2/services"
 
 	v2 "github.com/cosmos/cosmos-sdk/x/genutil/v2"
 )

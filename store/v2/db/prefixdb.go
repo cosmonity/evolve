@@ -6,7 +6,7 @@ import (
 	"sync"
 
 	corestore "cosmossdk.io/core/store"
-	"cosmossdk.io/store/v2/errors"
+	"go.cosmonity.xyz/evolve/store/v2/errors"
 )
 
 // PrefixDB wraps a namespace of another database as a logical database.

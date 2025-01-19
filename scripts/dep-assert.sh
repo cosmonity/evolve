@@ -20,8 +20,8 @@ do
 done
 
 # no runtime/v2 or server/v2 imports in x/ modules
-RUNTIMEV2_REGEX="cosmossdk.io/runtime/v2"
-SEVERV2_REGEX="cosmossdk.io/server/v2"
+RUNTIMEV2_REGEX="go.cosmonity.xyz/evolve/runtime/v2"
+SEVERV2_REGEX="go.cosmonity.xyz/evolve/server/v2"
 XEXP_REGEX="golang.org/x/exp"
 find ./x/ -type f -name 'go.mod' -print0 | while IFS= read -r -d '' file
 do

@@ -12,7 +12,7 @@ import (
 
 	coreserver "cosmossdk.io/core/server"
 	corestore "cosmossdk.io/core/store"
-	storeerrors "cosmossdk.io/store/v2/errors"
+	storeerrors "go.cosmonity.xyz/evolve/store/v2/errors"
 )
 
 var _ corestore.KVStoreWithBatch = (*PebbleDB)(nil)

@@ -3,7 +3,7 @@ package iavl
 import (
 	"github.com/cosmos/iavl"
 
-	snapshotstypes "cosmossdk.io/store/v2/snapshots/types"
+	snapshotstypes "go.cosmonity.xyz/evolve/store/v2/snapshots/types"
 )
 
 // Importer is a wrapper around iavl.Importer.

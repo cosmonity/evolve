@@ -12,7 +12,6 @@ import (
 	"cosmossdk.io/core/transaction"
 	"cosmossdk.io/depinject"
 	"cosmossdk.io/log"
-	"cosmossdk.io/runtime/v2"
 	"cosmossdk.io/x/accounts"
 	"cosmossdk.io/x/accounts/accountstd"
 	basedepinject "cosmossdk.io/x/accounts/defaults/base/depinject"
@@ -25,6 +24,7 @@ import (
 	_ "cosmossdk.io/x/consensus" // import as blank for app wiring
 	minttypes "cosmossdk.io/x/mint/types"
 	_ "cosmossdk.io/x/staking" // import as blank for app wirings
+	"go.cosmonity.xyz/evolve/runtime/v2"
 
 	"github.com/cosmos/cosmos-sdk/codec"
 	codectestutil "github.com/cosmos/cosmos-sdk/codec/testutil"

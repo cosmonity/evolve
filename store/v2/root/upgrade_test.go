@@ -9,11 +9,11 @@ import (
 	corestore "cosmossdk.io/core/store"
 	coretesting "cosmossdk.io/core/testing"
 	"cosmossdk.io/log"
-	"cosmossdk.io/store/v2"
-	"cosmossdk.io/store/v2/commitment"
-	"cosmossdk.io/store/v2/commitment/iavl"
-	dbm "cosmossdk.io/store/v2/db"
-	"cosmossdk.io/store/v2/pruning"
+	"go.cosmonity.xyz/evolve/store/v2"
+	"go.cosmonity.xyz/evolve/store/v2/commitment"
+	"go.cosmonity.xyz/evolve/store/v2/commitment/iavl"
+	dbm "go.cosmonity.xyz/evolve/store/v2/db"
+	"go.cosmonity.xyz/evolve/store/v2/pruning"
 )
 
 type UpgradeStoreTestSuite struct {

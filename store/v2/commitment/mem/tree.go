@@ -3,8 +3,8 @@ package mem
 import (
 	ics23 "github.com/cosmos/ics23/go"
 
-	"cosmossdk.io/store/v2/commitment"
-	"cosmossdk.io/store/v2/db"
+	"go.cosmonity.xyz/evolve/store/v2/commitment"
+	"go.cosmonity.xyz/evolve/store/v2/db"
 )
 
 var _ commitment.Tree = (*Tree)(nil)

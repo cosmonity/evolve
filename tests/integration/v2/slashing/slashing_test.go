@@ -146,7 +146,7 @@ func TestSlashingMsgs(t *testing.T) {
 
 	require.NoError(t, banktestutil.FundAccount(f.ctx, f.bankKeeper, addr1, sdk.NewCoins(genCoin)))
 
-	description := stakingtypes.NewDescription("foo_moniker", "", "", "", "", &stakingtypes.Metadata{})
+	description := stakingtypes.NewDescription("foo_moniker", "", "", "", "")
 	commission := stakingtypes.NewCommissionRates(math.LegacyZeroDec(), math.LegacyZeroDec(), math.LegacyZeroDec())
 
 	addrStrVal, err := valaddrCodec.BytesToString(addr1)

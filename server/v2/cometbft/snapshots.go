@@ -10,8 +10,8 @@ import (
 	abci "github.com/cometbft/cometbft/api/cometbft/abci/v1"
 	"github.com/cosmos/gogoproto/proto"
 
-	"cosmossdk.io/store/v2/snapshots"
-	snapshottypes "cosmossdk.io/store/v2/snapshots/types"
+	"go.cosmonity.xyz/evolve/store/v2/snapshots"
+	snapshottypes "go.cosmonity.xyz/evolve/store/v2/snapshots/types"
 )
 
 // GetSnapshotStore returns a snapshot store for the given application options.

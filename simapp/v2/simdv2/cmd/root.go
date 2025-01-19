@@ -10,9 +10,9 @@ import (
 	"cosmossdk.io/core/transaction"
 	"cosmossdk.io/depinject"
 	"cosmossdk.io/log"
-	"cosmossdk.io/runtime/v2"
-	serverv2 "cosmossdk.io/server/v2"
-	"cosmossdk.io/simapp/v2"
+	"go.cosmonity.xyz/evolve/runtime/v2"
+	serverv2 "go.cosmonity.xyz/evolve/server/v2"
+	"go.cosmonity.xyz/evolve/simapp/v2"
 
 	"github.com/cosmos/cosmos-sdk/client"
 )

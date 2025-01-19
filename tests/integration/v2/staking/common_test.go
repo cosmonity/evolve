@@ -1,15 +1,18 @@
 package staking
 
 import (
+	"bytes"
 	"context"
 	"math/big"
 	"testing"
 
 	"gotest.tools/v3/assert"
 
+	appmodulev2 "cosmossdk.io/core/appmodule/v2"
 	"cosmossdk.io/depinject"
 	"cosmossdk.io/log"
 	"cosmossdk.io/math"
+	storetypes "cosmossdk.io/store/types"
 	_ "cosmossdk.io/x/accounts" // import as blank for app wiring
 	_ "cosmossdk.io/x/bank"     // import as blank for app wiring
 	bankkeeper "cosmossdk.io/x/bank/keeper"
@@ -171,4 +174,62 @@ func initFixture(tb testing.TB, isGenesisSkip bool, stakingHooks ...types.Stakin
 	res.queryClient = stakingkeeper.NewQuerier(res.stakingKeeper)
 
 	return &res
+}
+
+// testingUpdateValidatorV2 updates a validator in v2 for testing
+func testingUpdateValidatorV2(keeper *stakingkeeper.Keeper, ctx context.Context, validator types.Validator, apply bool) (types.Validator, []appmodulev2.ValidatorUpdate) {
+	err := keeper.SetValidator(ctx, validator)
+	if err != nil {
+		panic(err)
+	}
+
+	// Remove any existing power key for validator.
+	store := keeper.KVStoreService.OpenKVStore(ctx)
+	deleted := false
+
+	iterator, err := store.Iterator(types.ValidatorsByPowerIndexKey, storetypes.PrefixEndBytes(types.ValidatorsByPowerIndexKey))
+	if err != nil {
+		panic(err)
+	}
+	defer iterator.Close()
+
+	bz, err := keeper.ValidatorAddressCodec().StringToBytes(validator.GetOperator())
+	if err != nil {
+		panic(err)
+	}
+
+	for ; iterator.Valid(); iterator.Next() {
+		valAddr := types.ParseValidatorPowerRankKey(iterator.Key())
+		if bytes.Equal(valAddr, bz) {
+			if deleted {
+				panic("found duplicate power index key")
+			} else {
+				deleted = true
+			}
+
+			if err = store.Delete(iterator.Key()); err != nil {
+				panic(err)
+			}
+		}
+	}
+
+	if err = keeper.SetValidatorByPowerIndex(ctx, validator); err != nil {
+		panic(err)
+	}
+
+	var updates []appmodulev2.ValidatorUpdate
+
+	if apply {
+		updates, err = keeper.ApplyAndReturnValidatorSetUpdates(ctx)
+		if err != nil {
+			panic(err)
+		}
+	}
+
+	validator, err = keeper.GetValidator(ctx, sdk.ValAddress(bz))
+	if err != nil {
+		panic(err)
+	}
+
+	return validator, updates
 }

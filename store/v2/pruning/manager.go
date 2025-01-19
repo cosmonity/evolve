@@ -1,7 +1,7 @@
 package pruning
 
 import (
-	"cosmossdk.io/store/v2"
+	"go.cosmonity.xyz/evolve/store/v2"
 )
 
 // Manager is a struct that manages the pruning of old versions of the SC and SS.
