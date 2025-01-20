@@ -30,7 +30,7 @@ require (
 	cosmossdk.io/x/nft v0.2.0-rc.1
 	cosmossdk.io/x/protocolpool v0.2.0-rc.1
 	cosmossdk.io/x/slashing v0.2.0-rc.1
-	cosmossdk.io/x/staking v0.2.0-rc.1
+	cosmossdk.io/x/staking v0.2.0-rc.1.0.20250120101754-2fddc86c8dec
 	cosmossdk.io/x/upgrade v0.2.0-rc.1
 	github.com/cometbft/cometbft v1.0.0
 	github.com/cometbft/cometbft/api v1.0.0
@@ -255,7 +255,7 @@ require (
 // replace (
 // 	<temporary replace>
 // )
-replace github.com/cosmos/cosmos-sdk => github.com/cosmos/cosmos-sdk v0.52.0-rc.1.0.20250117223216-2dc4cd5876ba
+replace github.com/cosmos/cosmos-sdk => github.com/cosmos/cosmos-sdk v0.52.0-rc.1.0.20250120101754-2fddc86c8dec
 
 // Below are the long-lived replace of the SimApp
 replace (
