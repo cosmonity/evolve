@@ -10,6 +10,10 @@ import (
 	"google.golang.org/protobuf/reflect/protodesc"
 	"google.golang.org/protobuf/reflect/protoregistry"
 
+	"go.cosmonity.xyz/evolve/runtime/v2/services"
+	"go.cosmonity.xyz/evolve/server/v2/stf"
+	"go.cosmonity.xyz/evolve/store/v2/root"
+
 	runtimev2 "cosmossdk.io/api/cosmos/app/runtime/v2"
 	appv1alpha1 "cosmossdk.io/api/cosmos/app/v1alpha1"
 	autocliv1 "cosmossdk.io/api/cosmos/autocli/v1"
@@ -27,9 +31,6 @@ import (
 	"cosmossdk.io/depinject"
 	"cosmossdk.io/depinject/appconfig"
 	"cosmossdk.io/log"
-	"go.cosmonity.xyz/evolve/runtime/v2/services"
-	"go.cosmonity.xyz/evolve/server/v2/stf"
-	"go.cosmonity.xyz/evolve/store/v2/root"
 )
 
 var (

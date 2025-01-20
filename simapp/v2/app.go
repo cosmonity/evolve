@@ -6,6 +6,12 @@ import (
 
 	_ "github.com/jackc/pgx/v5/stdlib" // Import and register pgx driver
 
+	"go.cosmonity.xyz/evolve/runtime/v2"
+	serverstore "go.cosmonity.xyz/evolve/server/v2/store"
+	"go.cosmonity.xyz/evolve/store/v2"
+	"go.cosmonity.xyz/evolve/store/v2/commitment/iavlv2"
+	"go.cosmonity.xyz/evolve/store/v2/root"
+
 	"cosmossdk.io/core/registry"
 	"cosmossdk.io/core/server"
 	"cosmossdk.io/core/transaction"
@@ -19,11 +25,6 @@ import (
 	multisigdepinject "cosmossdk.io/x/accounts/defaults/multisig/depinject"
 	stakingkeeper "cosmossdk.io/x/staking/keeper"
 	upgradekeeper "cosmossdk.io/x/upgrade/keeper"
-	"go.cosmonity.xyz/evolve/runtime/v2"
-	serverstore "go.cosmonity.xyz/evolve/server/v2/store"
-	"go.cosmonity.xyz/evolve/store/v2"
-	"go.cosmonity.xyz/evolve/store/v2/commitment/iavlv2"
-	"go.cosmonity.xyz/evolve/store/v2/root"
 
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/codec"

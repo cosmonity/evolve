@@ -6,9 +6,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 
+	"go.cosmonity.xyz/evolve/server/v2/stf"
+
 	appmodulev2 "cosmossdk.io/core/appmodule/v2"
 	"cosmossdk.io/core/transaction"
-	"go.cosmonity.xyz/evolve/server/v2/stf"
 )
 
 // MockModule implements both HasMsgHandlers and HasQueryHandlers

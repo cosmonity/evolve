@@ -6,8 +6,6 @@ import (
 
 	iavl_v2 "github.com/cosmos/iavl/v2"
 
-	"cosmossdk.io/core/log"
-	corestore "cosmossdk.io/core/store"
 	"go.cosmonity.xyz/evolve/store/v2"
 	"go.cosmonity.xyz/evolve/store/v2/commitment"
 	"go.cosmonity.xyz/evolve/store/v2/commitment/iavl"
@@ -19,6 +17,9 @@ import (
 	"go.cosmonity.xyz/evolve/store/v2/migration"
 	"go.cosmonity.xyz/evolve/store/v2/pruning"
 	"go.cosmonity.xyz/evolve/store/v2/snapshots"
+
+	"cosmossdk.io/core/log"
+	corestore "cosmossdk.io/core/store"
 )
 
 type (

@@ -3,9 +3,10 @@ package stf
 import (
 	"context"
 
+	stfgas "go.cosmonity.xyz/evolve/server/v2/stf/gas"
+
 	"cosmossdk.io/core/gas"
 	"cosmossdk.io/core/store"
-	stfgas "go.cosmonity.xyz/evolve/server/v2/stf/gas"
 )
 
 type (

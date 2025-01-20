@@ -7,10 +7,11 @@ import (
 	"net/http"
 	"strings"
 
+	serverv2 "go.cosmonity.xyz/evolve/server/v2"
+
 	"cosmossdk.io/core/server"
 	"cosmossdk.io/core/transaction"
 	"cosmossdk.io/log"
-	serverv2 "go.cosmonity.xyz/evolve/server/v2"
 )
 
 var (

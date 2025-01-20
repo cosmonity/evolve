@@ -1,9 +1,10 @@
 package types
 
 import (
-	"cosmossdk.io/core/store"
 	storev2 "go.cosmonity.xyz/evolve/store/v2"
 	"go.cosmonity.xyz/evolve/store/v2/proof"
+
+	"cosmossdk.io/core/store"
 )
 
 type Store interface {

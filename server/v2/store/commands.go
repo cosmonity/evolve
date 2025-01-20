@@ -6,10 +6,11 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
-	"cosmossdk.io/log"
 	serverv2 "go.cosmonity.xyz/evolve/server/v2"
 	storev2 "go.cosmonity.xyz/evolve/store/v2"
 	"go.cosmonity.xyz/evolve/store/v2/root"
+
+	"cosmossdk.io/log"
 )
 
 // PrunesCmd implements the default command for pruning app history states.

@@ -6,9 +6,10 @@ import (
 
 	gogotypes "github.com/cosmos/gogoproto/types"
 
-	corestore "cosmossdk.io/core/store"
 	"go.cosmonity.xyz/evolve/store/v2/internal/encoding"
 	"go.cosmonity.xyz/evolve/store/v2/proof"
+
+	corestore "cosmossdk.io/core/store"
 )
 
 const (

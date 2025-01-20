@@ -6,11 +6,12 @@ import (
 	"fmt"
 	"net/http"
 
+	serverv2 "go.cosmonity.xyz/evolve/server/v2"
+	"go.cosmonity.xyz/evolve/server/v2/appmanager"
+
 	"cosmossdk.io/core/server"
 	"cosmossdk.io/core/transaction"
 	"cosmossdk.io/log"
-	serverv2 "go.cosmonity.xyz/evolve/server/v2"
-	"go.cosmonity.xyz/evolve/server/v2/appmanager"
 )
 
 const (

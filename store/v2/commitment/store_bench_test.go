@@ -7,11 +7,12 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	corestore "cosmossdk.io/core/store"
-	coretesting "cosmossdk.io/core/testing"
 	"go.cosmonity.xyz/evolve/store/v2/commitment"
 	"go.cosmonity.xyz/evolve/store/v2/commitment/iavl"
 	dbm "go.cosmonity.xyz/evolve/store/v2/db"
+
+	corestore "cosmossdk.io/core/store"
+	coretesting "cosmossdk.io/core/testing"
 )
 
 var (

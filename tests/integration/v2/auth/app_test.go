@@ -6,6 +6,10 @@ import (
 
 	"github.com/stretchr/testify/require"
 
+	"go.cosmonity.xyz/evolve/runtime/v2"
+	"go.cosmonity.xyz/evolve/runtime/v2/services"
+	"go.cosmonity.xyz/evolve/server/v2/stf"
+
 	"cosmossdk.io/core/router"
 	"cosmossdk.io/core/testing/msgrouter"
 	"cosmossdk.io/core/transaction"
@@ -19,9 +23,6 @@ import (
 	banktypes "cosmossdk.io/x/bank/types"
 	_ "cosmossdk.io/x/consensus" // import as blank for app wiring
 	_ "cosmossdk.io/x/staking"   // import as blank for app wirings
-	"go.cosmonity.xyz/evolve/runtime/v2"
-	"go.cosmonity.xyz/evolve/runtime/v2/services"
-	"go.cosmonity.xyz/evolve/server/v2/stf"
 
 	"github.com/cosmos/cosmos-sdk/tests/integration/v2"
 	"github.com/cosmos/cosmos-sdk/testutil/configurator"

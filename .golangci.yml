@@ -87,6 +87,7 @@ linters-settings:
     sections:
       - standard # Standard section: captures all standard packages.
       - default # Default section: contains all imports that could not be matched to another section type.
+      - prefix(go.cosmonity.xyz)
       - prefix(cosmossdk.io)
       - prefix(github.com/cosmos/cosmos-sdk)
   revive:

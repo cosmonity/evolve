@@ -7,8 +7,9 @@ import (
 	abci "github.com/cometbft/cometbft/api/cometbft/abci/v1"
 	crypto "github.com/cometbft/cometbft/api/cometbft/crypto/v1"
 
-	errorsmod "cosmossdk.io/errors/v2"
 	cometerrors "go.cosmonity.xyz/evolve/server/v2/cometbft/types/errors"
+
+	errorsmod "cosmossdk.io/errors/v2"
 )
 
 func (c *consensus[T]) handleQueryP2P(path []string) (*abci.QueryResponse, error) {

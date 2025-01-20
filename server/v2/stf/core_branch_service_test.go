@@ -7,10 +7,11 @@ import (
 
 	gogotypes "github.com/cosmos/gogoproto/types"
 
-	appmodulev2 "cosmossdk.io/core/appmodule/v2"
 	"go.cosmonity.xyz/evolve/server/v2/stf/branch"
 	"go.cosmonity.xyz/evolve/server/v2/stf/gas"
 	"go.cosmonity.xyz/evolve/server/v2/stf/mock"
+
+	appmodulev2 "cosmossdk.io/core/appmodule/v2"
 )
 
 func TestBranchService(t *testing.T) {

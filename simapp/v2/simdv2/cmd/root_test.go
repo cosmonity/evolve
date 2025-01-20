@@ -7,8 +7,9 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"cosmossdk.io/core/transaction"
 	"go.cosmonity.xyz/evolve/simapp/v2/simdv2/cmd"
+
+	"cosmossdk.io/core/transaction"
 
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/cosmos/cosmos-sdk/x/genutil/client/cli"

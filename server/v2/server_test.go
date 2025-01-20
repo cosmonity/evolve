@@ -11,13 +11,14 @@ import (
 	"github.com/spf13/viper"
 	"github.com/stretchr/testify/require"
 
-	appmodulev2 "cosmossdk.io/core/appmodule/v2"
-	"cosmossdk.io/core/transaction"
-	"cosmossdk.io/log"
 	serverv2 "go.cosmonity.xyz/evolve/server/v2"
 	"go.cosmonity.xyz/evolve/server/v2/api/grpc"
 	"go.cosmonity.xyz/evolve/server/v2/store"
 	storev2 "go.cosmonity.xyz/evolve/store/v2"
+
+	appmodulev2 "cosmossdk.io/core/appmodule/v2"
+	"cosmossdk.io/core/transaction"
+	"cosmossdk.io/log"
 )
 
 type mockStore struct {

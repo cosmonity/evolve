@@ -5,10 +5,11 @@ import (
 
 	"github.com/stretchr/testify/require"
 
+	stfgas "go.cosmonity.xyz/evolve/server/v2/stf/gas"
+
 	"cosmossdk.io/core/header"
 	counterv1 "cosmossdk.io/x/accounts/testing/counter/v1"
 	"cosmossdk.io/x/bank/testutil"
-	stfgas "go.cosmonity.xyz/evolve/server/v2/stf/gas"
 
 	"github.com/cosmos/cosmos-sdk/tests/integration/v2"
 	sdk "github.com/cosmos/cosmos-sdk/types"

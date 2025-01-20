@@ -16,10 +16,11 @@ import (
 
 	"github.com/cosmos/gogoproto/proto"
 
-	corestore "cosmossdk.io/core/store"
-	"cosmossdk.io/errors/v2"
 	storeerrors "go.cosmonity.xyz/evolve/store/v2/errors"
 	"go.cosmonity.xyz/evolve/store/v2/snapshots/types"
+
+	corestore "cosmossdk.io/core/store"
+	"cosmossdk.io/errors/v2"
 )
 
 const (

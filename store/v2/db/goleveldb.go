@@ -14,9 +14,10 @@ import (
 	"github.com/syndtr/goleveldb/leveldb/opt"
 	"github.com/syndtr/goleveldb/leveldb/util"
 
+	storeerrors "go.cosmonity.xyz/evolve/store/v2/errors"
+
 	coreserver "cosmossdk.io/core/server"
 	corestore "cosmossdk.io/core/store"
-	storeerrors "go.cosmonity.xyz/evolve/store/v2/errors"
 )
 
 var _ corestore.KVStoreWithBatch = (*GoLevelDB)(nil)

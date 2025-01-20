@@ -11,8 +11,9 @@ import (
 	"github.com/cosmos/gogoproto/jsonpb"
 	gogoproto "github.com/cosmos/gogoproto/proto"
 
-	"cosmossdk.io/core/transaction"
 	"go.cosmonity.xyz/evolve/server/v2/appmanager"
+
+	"cosmossdk.io/core/transaction"
 )
 
 const (

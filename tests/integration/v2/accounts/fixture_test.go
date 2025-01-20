@@ -7,6 +7,8 @@ import (
 	gogotypes "github.com/cosmos/gogoproto/types"
 	"github.com/stretchr/testify/require"
 
+	"go.cosmonity.xyz/evolve/runtime/v2"
+
 	"cosmossdk.io/core/router"
 	"cosmossdk.io/core/testing/msgrouter"
 	"cosmossdk.io/core/transaction"
@@ -24,7 +26,6 @@ import (
 	_ "cosmossdk.io/x/consensus" // import as blank for app wiring
 	minttypes "cosmossdk.io/x/mint/types"
 	_ "cosmossdk.io/x/staking" // import as blank for app wirings
-	"go.cosmonity.xyz/evolve/runtime/v2"
 
 	"github.com/cosmos/cosmos-sdk/codec"
 	codectestutil "github.com/cosmos/cosmos-sdk/codec/testutil"

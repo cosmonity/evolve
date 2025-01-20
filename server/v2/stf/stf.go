@@ -8,6 +8,9 @@ import (
 	"iter"
 	"strings"
 
+	stfgas "go.cosmonity.xyz/evolve/server/v2/stf/gas"
+	"go.cosmonity.xyz/evolve/server/v2/stf/internal"
+
 	appmodulev2 "cosmossdk.io/core/appmodule/v2"
 	corecontext "cosmossdk.io/core/context"
 	"cosmossdk.io/core/event"
@@ -19,8 +22,6 @@ import (
 	"cosmossdk.io/core/store"
 	"cosmossdk.io/core/transaction"
 	"cosmossdk.io/schema/appdata"
-	stfgas "go.cosmonity.xyz/evolve/server/v2/stf/gas"
-	"go.cosmonity.xyz/evolve/server/v2/stf/internal"
 )
 
 type eContextKey struct{}

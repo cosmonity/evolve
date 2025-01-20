@@ -10,6 +10,8 @@ import (
 	"github.com/stretchr/testify/require"
 	"gotest.tools/v3/assert"
 
+	"go.cosmonity.xyz/evolve/runtime/v2"
+
 	"cosmossdk.io/core/router"
 	"cosmossdk.io/core/testing/msgrouter"
 	"cosmossdk.io/core/transaction"
@@ -31,7 +33,6 @@ import (
 	_ "cosmossdk.io/x/staking"
 	stakingkeeper "cosmossdk.io/x/staking/keeper"
 	stakingtypes "cosmossdk.io/x/staking/types"
-	"go.cosmonity.xyz/evolve/runtime/v2"
 
 	"github.com/cosmos/cosmos-sdk/codec"
 	"github.com/cosmos/cosmos-sdk/crypto/keys/ed25519"

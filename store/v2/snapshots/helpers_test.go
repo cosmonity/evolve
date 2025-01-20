@@ -14,9 +14,10 @@ import (
 	protoio "github.com/cosmos/gogoproto/io"
 	"github.com/stretchr/testify/require"
 
-	coretesting "cosmossdk.io/core/testing"
 	"go.cosmonity.xyz/evolve/store/v2/snapshots"
 	snapshotstypes "go.cosmonity.xyz/evolve/store/v2/snapshots/types"
+
+	coretesting "cosmossdk.io/core/testing"
 )
 
 func checksums(slice [][]byte) [][]byte {

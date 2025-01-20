@@ -7,11 +7,12 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
 
+	"go.cosmonity.xyz/evolve/store/v2/commitment"
+	dbm "go.cosmonity.xyz/evolve/store/v2/db"
+
 	corelog "cosmossdk.io/core/log"
 	corestore "cosmossdk.io/core/store"
 	coretesting "cosmossdk.io/core/testing"
-	"go.cosmonity.xyz/evolve/store/v2/commitment"
-	dbm "go.cosmonity.xyz/evolve/store/v2/db"
 )
 
 func TestCommitterSuite(t *testing.T) {

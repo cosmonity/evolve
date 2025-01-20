@@ -6,9 +6,10 @@ import (
 	gogotypes "github.com/cosmos/gogoproto/types"
 	"github.com/stretchr/testify/require"
 
+	"go.cosmonity.xyz/evolve/store/v2/db"
+
 	corestore "cosmossdk.io/core/store"
 	coretesting "cosmossdk.io/core/testing"
-	"go.cosmonity.xyz/evolve/store/v2/db"
 )
 
 func TestFactory(t *testing.T) {

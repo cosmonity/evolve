@@ -19,12 +19,6 @@ import (
 	gogotypes "github.com/cosmos/gogoproto/types"
 	"github.com/stretchr/testify/require"
 
-	appmodulev2 "cosmossdk.io/core/appmodule/v2"
-	"cosmossdk.io/core/server"
-	"cosmossdk.io/core/store"
-	"cosmossdk.io/core/transaction"
-	"cosmossdk.io/log"
-	consensustypes "cosmossdk.io/x/consensus/types"
 	"go.cosmonity.xyz/evolve/server/v2/appmanager"
 	"go.cosmonity.xyz/evolve/server/v2/cometbft/handlers"
 	cometmock "go.cosmonity.xyz/evolve/server/v2/cometbft/internal/mock"
@@ -34,6 +28,13 @@ import (
 	"go.cosmonity.xyz/evolve/server/v2/stf"
 	"go.cosmonity.xyz/evolve/server/v2/stf/branch"
 	"go.cosmonity.xyz/evolve/server/v2/stf/mock"
+
+	appmodulev2 "cosmossdk.io/core/appmodule/v2"
+	"cosmossdk.io/core/server"
+	"cosmossdk.io/core/store"
+	"cosmossdk.io/core/transaction"
+	"cosmossdk.io/log"
+	consensustypes "cosmossdk.io/x/consensus/types"
 
 	"github.com/cosmos/cosmos-sdk/testutil/testdata"
 	sdk "github.com/cosmos/cosmos-sdk/types"

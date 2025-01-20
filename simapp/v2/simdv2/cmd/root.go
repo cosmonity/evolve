@@ -6,13 +6,14 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
 
+	"go.cosmonity.xyz/evolve/runtime/v2"
+	serverv2 "go.cosmonity.xyz/evolve/server/v2"
+	"go.cosmonity.xyz/evolve/simapp/v2"
+
 	"cosmossdk.io/client/v2/autocli"
 	"cosmossdk.io/core/transaction"
 	"cosmossdk.io/depinject"
 	"cosmossdk.io/log"
-	"go.cosmonity.xyz/evolve/runtime/v2"
-	serverv2 "go.cosmonity.xyz/evolve/server/v2"
-	"go.cosmonity.xyz/evolve/simapp/v2"
 
 	"github.com/cosmos/cosmos-sdk/client"
 )

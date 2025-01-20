@@ -6,6 +6,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
+	"go.cosmonity.xyz/evolve/runtime/v2"
+
 	"cosmossdk.io/core/router"
 	"cosmossdk.io/core/testing/msgrouter"
 	"cosmossdk.io/core/transaction"
@@ -22,7 +24,6 @@ import (
 	_ "cosmossdk.io/x/protocolpool"
 	_ "cosmossdk.io/x/staking"
 	stakingkeeper "cosmossdk.io/x/staking/keeper"
-	"go.cosmonity.xyz/evolve/runtime/v2"
 
 	"github.com/cosmos/cosmos-sdk/tests/integration/v2"
 	"github.com/cosmos/cosmos-sdk/testutil/configurator"

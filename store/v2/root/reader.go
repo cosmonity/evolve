@@ -1,8 +1,9 @@
 package root
 
 import (
-	corestore "cosmossdk.io/core/store"
 	"go.cosmonity.xyz/evolve/store/v2"
+
+	corestore "cosmossdk.io/core/store"
 )
 
 var (

@@ -11,10 +11,11 @@ import (
 	"sort"
 	"sync"
 
-	corelog "cosmossdk.io/core/log"
-	errorsmod "cosmossdk.io/errors/v2"
 	storeerrors "go.cosmonity.xyz/evolve/store/v2/errors"
 	"go.cosmonity.xyz/evolve/store/v2/snapshots/types"
+
+	corelog "cosmossdk.io/core/log"
+	errorsmod "cosmossdk.io/errors/v2"
 )
 
 // Manager manages snapshot and restore operations for an app, making sure only a single

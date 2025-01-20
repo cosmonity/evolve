@@ -4,13 +4,14 @@ import (
 	"crypto/sha256"
 	"fmt"
 
-	"cosmossdk.io/core/log"
-	corestore "cosmossdk.io/core/store"
 	storev2 "go.cosmonity.xyz/evolve/store/v2"
 	"go.cosmonity.xyz/evolve/store/v2/commitment"
 	"go.cosmonity.xyz/evolve/store/v2/commitment/iavl"
 	dbm "go.cosmonity.xyz/evolve/store/v2/db"
 	"go.cosmonity.xyz/evolve/store/v2/proof"
+
+	"cosmossdk.io/core/log"
+	corestore "cosmossdk.io/core/store"
 )
 
 type MockStore struct {

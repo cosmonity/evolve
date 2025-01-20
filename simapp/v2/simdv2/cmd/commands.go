@@ -6,11 +6,6 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"cosmossdk.io/client/v2/offchain"
-	coreserver "cosmossdk.io/core/server"
-	"cosmossdk.io/core/transaction"
-	"cosmossdk.io/log"
-	confixcmd "cosmossdk.io/tools/confix/cmd"
 	runtimev2 "go.cosmonity.xyz/evolve/runtime/v2"
 	serverv2 "go.cosmonity.xyz/evolve/server/v2"
 	grpcserver "go.cosmonity.xyz/evolve/server/v2/api/grpc"
@@ -20,6 +15,12 @@ import (
 	"go.cosmonity.xyz/evolve/server/v2/cometbft"
 	serverstore "go.cosmonity.xyz/evolve/server/v2/store"
 	"go.cosmonity.xyz/evolve/simapp/v2"
+
+	"cosmossdk.io/client/v2/offchain"
+	coreserver "cosmossdk.io/core/server"
+	"cosmossdk.io/core/transaction"
+	"cosmossdk.io/log"
+	confixcmd "cosmossdk.io/tools/confix/cmd"
 
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/config"

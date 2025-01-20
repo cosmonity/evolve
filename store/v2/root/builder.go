@@ -4,9 +4,10 @@ import (
 	"fmt"
 	"path/filepath"
 
-	"cosmossdk.io/log"
 	"go.cosmonity.xyz/evolve/store/v2"
 	"go.cosmonity.xyz/evolve/store/v2/db"
+
+	"cosmossdk.io/log"
 )
 
 // Builder is the interface for a store/v2 RootStore builder.

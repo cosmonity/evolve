@@ -22,9 +22,10 @@ import (
 	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/reflect/protoreflect"
 
+	"go.cosmonity.xyz/evolve/server/v2/appmanager"
+
 	"cosmossdk.io/core/transaction"
 	"cosmossdk.io/log"
-	"go.cosmonity.xyz/evolve/server/v2/appmanager"
 )
 
 const MaxBodySize = 1 << 20 // 1 MB

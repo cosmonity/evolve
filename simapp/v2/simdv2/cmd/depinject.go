@@ -3,10 +3,11 @@ package cmd
 import (
 	"os"
 
-	"cosmossdk.io/core/address"
-	"cosmossdk.io/core/registry"
 	"go.cosmonity.xyz/evolve/runtime/v2"
 	serverv2 "go.cosmonity.xyz/evolve/server/v2"
+
+	"cosmossdk.io/core/address"
+	"cosmossdk.io/core/registry"
 
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/config"

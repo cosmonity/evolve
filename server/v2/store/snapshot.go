@@ -15,11 +15,12 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
-	"cosmossdk.io/log"
 	serverv2 "go.cosmonity.xyz/evolve/server/v2"
 	storev2 "go.cosmonity.xyz/evolve/store/v2"
 	"go.cosmonity.xyz/evolve/store/v2/snapshots"
 	"go.cosmonity.xyz/evolve/store/v2/snapshots/types"
+
+	"cosmossdk.io/log"
 )
 
 const SnapshotFileName = "_snapshot"
@@ -48,7 +49,7 @@ func (s *Server[T]) ExportSnapshotCmd() *cobra.Command {
 				if err != nil {
 					return err
 				}
-				height = int64(lastCommitId.Version)
+				height = lastCommitId.Version
 			}
 
 			cmd.Printf("Exporting snapshot for height %d\n", height)

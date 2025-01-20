@@ -7,11 +7,12 @@ import (
 
 	abci "github.com/cometbft/cometbft/api/cometbft/abci/v1"
 
+	"go.cosmonity.xyz/evolve/server/v2/cometbft/mempool"
+
 	"cosmossdk.io/core/server"
 	"cosmossdk.io/core/store"
 	"cosmossdk.io/core/transaction"
 	consensustypes "cosmossdk.io/x/consensus/types"
-	"go.cosmonity.xyz/evolve/server/v2/cometbft/mempool"
 )
 
 type AppManager[T transaction.Tx] interface {

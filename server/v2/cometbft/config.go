@@ -3,8 +3,9 @@ package cometbft
 import (
 	cmtcfg "github.com/cometbft/cometbft/config"
 
-	"cosmossdk.io/schema/indexer"
 	"go.cosmonity.xyz/evolve/server/v2/cometbft/mempool"
+
+	"cosmossdk.io/schema/indexer"
 )
 
 // Config is the configuration for the CometBFT application

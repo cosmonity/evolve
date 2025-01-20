@@ -4,12 +4,13 @@ import (
 	cmtcrypto "github.com/cometbft/cometbft/crypto"
 	cmted22519 "github.com/cometbft/cometbft/crypto/ed25519"
 
-	"cosmossdk.io/core/transaction"
 	"go.cosmonity.xyz/evolve/server/v2/cometbft/handlers"
 	"go.cosmonity.xyz/evolve/server/v2/cometbft/mempool"
 	"go.cosmonity.xyz/evolve/server/v2/cometbft/types"
 	"go.cosmonity.xyz/evolve/server/v2/streaming"
 	"go.cosmonity.xyz/evolve/store/v2/snapshots"
+
+	"cosmossdk.io/core/transaction"
 )
 
 type keyGenF = func() (cmtcrypto.PrivKey, error)

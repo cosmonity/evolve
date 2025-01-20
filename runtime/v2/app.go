@@ -3,14 +3,15 @@ package runtime
 import (
 	"encoding/json"
 
+	"go.cosmonity.xyz/evolve/server/v2/appmanager"
+	"go.cosmonity.xyz/evolve/server/v2/stf"
+
 	runtimev2 "cosmossdk.io/api/cosmos/app/runtime/v2"
 	appmodulev2 "cosmossdk.io/core/appmodule/v2"
 	"cosmossdk.io/core/registry"
 	"cosmossdk.io/core/transaction"
 	"cosmossdk.io/log"
 	"cosmossdk.io/schema/decoding"
-	"go.cosmonity.xyz/evolve/server/v2/appmanager"
-	"go.cosmonity.xyz/evolve/server/v2/stf"
 )
 
 // App is a wrapper around AppManager and ModuleManager that can be used in hybrid

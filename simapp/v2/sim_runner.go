@@ -16,6 +16,10 @@ import (
 	"github.com/spf13/viper"
 	"github.com/stretchr/testify/require"
 
+	"go.cosmonity.xyz/evolve/runtime/v2"
+	"go.cosmonity.xyz/evolve/server/v2/appmanager"
+	storev2 "go.cosmonity.xyz/evolve/store/v2"
+
 	"cosmossdk.io/core/appmodule"
 	appmodulev2 "cosmossdk.io/core/appmodule/v2"
 	"cosmossdk.io/core/comet"
@@ -26,9 +30,6 @@ import (
 	"cosmossdk.io/depinject"
 	"cosmossdk.io/log"
 	consensustypes "cosmossdk.io/x/consensus/types"
-	"go.cosmonity.xyz/evolve/runtime/v2"
-	"go.cosmonity.xyz/evolve/server/v2/appmanager"
-	storev2 "go.cosmonity.xyz/evolve/store/v2"
 
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/codec"

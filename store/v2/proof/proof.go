@@ -5,8 +5,9 @@ import (
 
 	ics23 "github.com/cosmos/ics23/go"
 
-	"cosmossdk.io/errors/v2"
 	storeerrors "go.cosmonity.xyz/evolve/store/v2/errors"
+
+	"cosmossdk.io/errors/v2"
 )
 
 // Proof operation types

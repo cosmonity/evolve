@@ -6,9 +6,10 @@ import (
 
 	cmtcfg "github.com/cometbft/cometbft/config"
 
-	"cosmossdk.io/core/transaction"
 	serverv2 "go.cosmonity.xyz/evolve/server/v2"
 	"go.cosmonity.xyz/evolve/server/v2/cometbft"
+
+	"cosmossdk.io/core/transaction"
 
 	clientconfig "github.com/cosmos/cosmos-sdk/client/config"
 	"github.com/cosmos/cosmos-sdk/crypto/keyring"

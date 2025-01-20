@@ -8,13 +8,14 @@ import (
 	"sync"
 	"time"
 
-	corelog "cosmossdk.io/core/log"
-	corestore "cosmossdk.io/core/store"
 	"go.cosmonity.xyz/evolve/store/v2"
 	"go.cosmonity.xyz/evolve/store/v2/metrics"
 	"go.cosmonity.xyz/evolve/store/v2/migration"
 	"go.cosmonity.xyz/evolve/store/v2/proof"
 	"go.cosmonity.xyz/evolve/store/v2/pruning"
+
+	corelog "cosmossdk.io/core/log"
+	corestore "cosmossdk.io/core/store"
 )
 
 var (

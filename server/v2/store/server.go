@@ -6,11 +6,12 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"cosmossdk.io/core/server"
-	"cosmossdk.io/core/transaction"
 	serverv2 "go.cosmonity.xyz/evolve/server/v2"
 	storev2 "go.cosmonity.xyz/evolve/store/v2"
 	"go.cosmonity.xyz/evolve/store/v2/root"
+
+	"cosmossdk.io/core/server"
+	"cosmossdk.io/core/transaction"
 )
 
 var (

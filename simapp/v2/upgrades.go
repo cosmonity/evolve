@@ -3,10 +3,11 @@ package simapp
 import (
 	"context"
 
+	"go.cosmonity.xyz/evolve/runtime/v2"
+
 	"cosmossdk.io/core/appmodule"
 	"cosmossdk.io/core/store"
 	upgradetypes "cosmossdk.io/x/upgrade/types"
-	"go.cosmonity.xyz/evolve/runtime/v2"
 )
 
 // UpgradeName defines the on-chain upgrade name for the sample SimApp upgrade

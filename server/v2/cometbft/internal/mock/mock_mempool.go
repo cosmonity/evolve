@@ -3,8 +3,9 @@ package mock
 import (
 	"context"
 
-	"cosmossdk.io/core/transaction"
 	"go.cosmonity.xyz/evolve/server/v2/cometbft/mempool"
+
+	"cosmossdk.io/core/transaction"
 )
 
 var _ mempool.Mempool[transaction.Tx] = (*MockMempool[transaction.Tx])(nil)

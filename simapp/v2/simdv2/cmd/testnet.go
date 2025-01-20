@@ -14,11 +14,6 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
 
-	"cosmossdk.io/core/transaction"
-	"cosmossdk.io/math"
-	"cosmossdk.io/math/unsafe"
-	banktypes "cosmossdk.io/x/bank/types"
-	stakingtypes "cosmossdk.io/x/staking/types"
 	runtimev2 "go.cosmonity.xyz/evolve/runtime/v2"
 	serverv2 "go.cosmonity.xyz/evolve/server/v2"
 	"go.cosmonity.xyz/evolve/server/v2/api/grpc"
@@ -27,6 +22,12 @@ import (
 	"go.cosmonity.xyz/evolve/server/v2/api/telemetry"
 	"go.cosmonity.xyz/evolve/server/v2/cometbft"
 	"go.cosmonity.xyz/evolve/server/v2/store"
+
+	"cosmossdk.io/core/transaction"
+	"cosmossdk.io/math"
+	"cosmossdk.io/math/unsafe"
+	banktypes "cosmossdk.io/x/bank/types"
+	stakingtypes "cosmossdk.io/x/staking/types"
 
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"

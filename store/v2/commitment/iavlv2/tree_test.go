@@ -8,9 +8,10 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
 
+	"go.cosmonity.xyz/evolve/store/v2/commitment"
+
 	corelog "cosmossdk.io/core/log"
 	corestore "cosmossdk.io/core/store"
-	"go.cosmonity.xyz/evolve/store/v2/commitment"
 )
 
 func TestCommitterSuite(t *testing.T) {

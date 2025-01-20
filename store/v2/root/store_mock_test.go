@@ -7,12 +7,13 @@ import (
 	"github.com/stretchr/testify/require"
 	"go.uber.org/mock/gomock"
 
-	corestore "cosmossdk.io/core/store"
-	coretesting "cosmossdk.io/core/testing"
 	"go.cosmonity.xyz/evolve/store/v2"
 	"go.cosmonity.xyz/evolve/store/v2/metrics"
 	"go.cosmonity.xyz/evolve/store/v2/mock"
 	"go.cosmonity.xyz/evolve/store/v2/pruning"
+
+	corestore "cosmossdk.io/core/store"
+	coretesting "cosmossdk.io/core/testing"
 )
 
 func newTestRootStore(sc store.Committer) *Store {

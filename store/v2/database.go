@@ -3,8 +3,9 @@ package store
 import (
 	"io"
 
-	corestore "cosmossdk.io/core/store"
 	"go.cosmonity.xyz/evolve/store/v2/proof"
+
+	corestore "cosmossdk.io/core/store"
 )
 
 type VersionedReader interface {
