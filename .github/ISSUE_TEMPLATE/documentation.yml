@@ -1,7 +1,6 @@
 name: Documentation Request
 description: Create an issue for missing or incorrect documentation
 title: "[Documentation]: "
-labels: ["T:Docs"]
 body:
   - type: markdown
     attributes:
