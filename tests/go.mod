@@ -27,7 +27,7 @@ require (
 	cosmossdk.io/x/protocolpool v0.2.0-rc.1
 	cosmossdk.io/x/slashing v0.2.0-rc.1
 	cosmossdk.io/x/staking v0.2.0-rc.1.0.20250118222626-4c47d8dddde3
-	cosmossdk.io/x/tx v1.0.0
+	cosmossdk.io/x/tx v1.0.1
 	cosmossdk.io/x/upgrade v0.2.0-rc.1
 	github.com/cometbft/cometbft v1.0.0
 	github.com/cometbft/cometbft/api v1.0.0
