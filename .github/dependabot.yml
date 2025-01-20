@@ -12,53 +12,43 @@ updates:
     directory: "/"
     schedule:
       interval: weekly
-    labels:
-      - dependencies
+
   - package-ecosystem: gomod
     directory: "/simapp/v2"
     schedule:
       interval: weekly
-    labels:
-      - dependencies
+
   - package-ecosystem: gomod
     directory: "/tests"
     schedule:
       interval: weekly
-    labels:
-      - dependencies
+
   - package-ecosystem: gomod
     directory: "/store/v2"
     schedule:
       interval: weekly
-    labels:
-      - dependencies
+
   - package-ecosystem: gomod
     directory: "/server/v2"
     schedule:
       interval: weekly
-    labels:
-      - dependencies
+
   - package-ecosystem: gomod
     directory: "/server/v2/stf"
     schedule:
       interval: weekly
-    labels:
-      - dependencies
+
   - package-ecosystem: gomod
     directory: "/server/v2/appmanager"
     schedule:
       interval: weekly
-    labels:
-      - dependencies
+
   - package-ecosystem: gomod
     directory: "/server/v2/cometbft"
     schedule:
       interval: weekly
-    labels:
-      - dependencies
+
   - package-ecosystem: gomod
     directory: "/runtime/v2"
     schedule:
       interval: weekly
-    labels:
-      - dependencies

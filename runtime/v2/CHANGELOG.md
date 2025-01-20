@@ -22,6 +22,10 @@ Each entry must include the Github issue reference in the following format:
 
 ## [Unreleased]
 
+---
+
+Tags prior to Cosmonity fork:
+
 ## [v2.0.0-beta.1](https://github.com/cosmos/cosmos-sdk/releases/tag/runtime/v2.0.0-beta.1)
 
 Initial tag of `cosmossdk.io/runtime/v2`.

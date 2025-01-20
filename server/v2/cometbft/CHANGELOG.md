@@ -22,6 +22,10 @@ Each entry must include the Github issue reference in the following format:
 
 ## [Unreleased]
 
+---
+
+Tags prior to Cosmonity fork:
+
 ## [v1.0.0-beta.2](https://github.com/cosmos/cosmos-sdk/releases/tag/server/v2/cometbft/v1.0.0-beta.2)
 
 * [#23365](https://github.com/cosmos/cosmos-sdk/pull/23365) Align default response for filter cmd when `handleQueryP2P`.

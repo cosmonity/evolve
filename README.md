@@ -4,6 +4,10 @@
 
 Community maintained fork of original [Cosmos SDK v2](https://github.com/cosmos/cosmos-sdk/releases/tag/server%2Fv2.0.0-beta.1).
 
+### Why?
+
+Wait and see. This will be updated soon.
+
 ## Changes
 
 * Remove all packages that aren't part of the v2 core layer
