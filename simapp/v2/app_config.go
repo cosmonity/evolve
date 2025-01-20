@@ -153,7 +153,6 @@ var (
 						accounts.ModuleName,
 						authtypes.ModuleName,
 						banktypes.ModuleName,
-						// bankv2types.ModuleName,
 						distrtypes.ModuleName,
 						stakingtypes.ModuleName,
 						slashingtypes.ModuleName,
@@ -297,10 +296,6 @@ var (
 				Name:   epochstypes.ModuleName,
 				Config: appconfig.WrapAny(&epochsmodulev1.Module{}),
 			},
-			// {
-			// 	Name:   bankv2types.ModuleName,
-			// 	Config: appconfig.WrapAny(&bankmodulev2.Module{}),
-			// },
 		},
 	}
 )
