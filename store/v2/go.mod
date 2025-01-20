@@ -10,7 +10,7 @@ require (
 	github.com/cockroachdb/pebble v1.1.3
 	github.com/cosmos/cosmos-proto v1.0.0-beta.5
 	github.com/cosmos/gogoproto v1.7.0
-	github.com/cosmos/iavl v1.3.4
+	github.com/cosmos/iavl v1.3.5
 	github.com/cosmos/iavl/v2 v2.0.0-alpha.4
 	github.com/cosmos/ics23/go v0.11.0
 	github.com/google/btree v1.1.3
