@@ -1,4 +1,4 @@
-module go.cosmonity.xyz/evolve/v2/appmanager
+module go.cosmonity.xyz/evolve/server/v2/appmanager
 
 go 1.23
 
