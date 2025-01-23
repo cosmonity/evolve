@@ -6,6 +6,8 @@ import (
 
 	"google.golang.org/protobuf/types/known/durationpb"
 
+	runtimev2types "go.cosmonity.xyz/evolve/runtime/v2"
+
 	accountsmodulev1 "cosmossdk.io/api/cosmos/accounts/module/v1"
 	runtimev2 "cosmossdk.io/api/cosmos/app/runtime/v2"
 	appv1alpha1 "cosmossdk.io/api/cosmos/app/v1alpha1"
@@ -31,7 +33,6 @@ import (
 	validatemodulev1 "cosmossdk.io/api/cosmos/validate/module/v1"
 	vestingmodulev1 "cosmossdk.io/api/cosmos/vesting/module/v1"
 	"cosmossdk.io/depinject/appconfig"
-	runtimev2types "cosmossdk.io/runtime/v2"
 	"cosmossdk.io/x/accounts"
 	"cosmossdk.io/x/authz"
 	_ "cosmossdk.io/x/authz/module" // import for side-effects
