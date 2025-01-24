@@ -3,7 +3,7 @@ module go.cosmonity.xyz/evolve/server/v2/cometbft
 go 1.23.4
 
 replace (
-	github.com/cosmos/cosmos-sdk => github.com/cosmos/cosmos-sdk v0.52.0-rc.1.0.20250117223216-2dc4cd5876ba
+	github.com/cosmos/cosmos-sdk => github.com/cosmos/cosmos-sdk v0.52.0-rc.1.0.20250124094023-4ab1af54c8a2
 	go.cosmonity.xyz/evolve/server/v2 => ../
 	go.cosmonity.xyz/evolve/server/v2/appmanager => ../appmanager
 	go.cosmonity.xyz/evolve/server/v2/stf => ../stf

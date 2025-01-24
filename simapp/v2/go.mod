@@ -255,7 +255,7 @@ require (
 // replace (
 // 	<temporary replace>
 // )
-replace github.com/cosmos/cosmos-sdk => github.com/cosmos/cosmos-sdk v0.52.0-rc.1.0.20250120101754-2fddc86c8dec
+replace github.com/cosmos/cosmos-sdk => github.com/cosmos/cosmos-sdk v0.52.0-rc.1.0.20250124094023-4ab1af54c8a2
 
 // Below are the long-lived replace of the SimApp
 replace (

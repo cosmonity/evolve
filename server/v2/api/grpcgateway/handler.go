@@ -25,7 +25,6 @@ import (
 	"go.cosmonity.xyz/evolve/server/v2/appmanager"
 
 	"cosmossdk.io/core/transaction"
-	"cosmossdk.io/log"
 )
 
 const MaxBodySize = 1 << 20 // 1 MB
@@ -48,7 +47,7 @@ type queryMetadata struct {
 
 // mountHTTPRoutes registers handlers for from proto HTTP annotations to the http.ServeMux, using runtime.ServeMux as a fallback/
 // last ditch effort router.
-func mountHTTPRoutes[T transaction.Tx](logger log.Logger, httpMux *http.ServeMux, fallbackRouter *runtime.ServeMux, am appmanager.AppManager[T]) error {
+func mountHTTPRoutes[T transaction.Tx](httpMux *http.ServeMux, fallbackRouter *runtime.ServeMux, am appmanager.AppManager[T]) error {
 	annotationMapping, err := newHTTPAnnotationMapping()
 	if err != nil {
 		return err
@@ -57,12 +56,12 @@ func mountHTTPRoutes[T transaction.Tx](logger log.Logger, httpMux *http.ServeMux
 	if err != nil {
 		return err
 	}
-	registerMethods[T](logger, httpMux, am, fallbackRouter, annotationToMetadata)
+	registerMethods[T](httpMux, am, fallbackRouter, annotationToMetadata)
 	return nil
 }
 
 // registerMethods registers the endpoints specified in the annotation mapping to the http.ServeMux.
-func registerMethods[T transaction.Tx](logger log.Logger, mux *http.ServeMux, am appmanager.AppManager[T], fallbackRouter *runtime.ServeMux, annotationToMetadata map[string]queryMetadata) {
+func registerMethods[T transaction.Tx](mux *http.ServeMux, am appmanager.AppManager[T], fallbackRouter *runtime.ServeMux, annotationToMetadata map[string]queryMetadata) {
 	// register the fallback handler. this will run if the mux isn't able to get a match from the registrations below.
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		fallbackRouter.ServeHTTP(w, r)

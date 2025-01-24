@@ -11,6 +11,7 @@ import (
 	grpcserver "go.cosmonity.xyz/evolve/server/v2/api/grpc"
 	"go.cosmonity.xyz/evolve/server/v2/api/grpcgateway"
 	"go.cosmonity.xyz/evolve/server/v2/api/rest"
+	"go.cosmonity.xyz/evolve/server/v2/api/swagger"
 	"go.cosmonity.xyz/evolve/server/v2/api/telemetry"
 	"go.cosmonity.xyz/evolve/server/v2/cometbft"
 	serverstore "go.cosmonity.xyz/evolve/server/v2/store"
@@ -25,6 +26,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/config"
 	"github.com/cosmos/cosmos-sdk/client/debug"
+	"github.com/cosmos/cosmos-sdk/client/docs"
 	"github.com/cosmos/cosmos-sdk/client/grpc/cmtservice"
 	nodeservice "github.com/cosmos/cosmos-sdk/client/grpc/node"
 	"github.com/cosmos/cosmos-sdk/client/keys"
@@ -86,6 +88,7 @@ func InitRootCmd[T transaction.Tx](
 			&telemetry.Server[T]{},
 			&rest.Server[T]{},
 			&grpcgateway.Server[T]{},
+			&swagger.Server[T]{},
 		)
 	}
 
@@ -123,7 +126,12 @@ func InitRootCmd[T transaction.Tx](
 		return nil, err
 	}
 
-	telemetryServer, err := telemetry.New[T](deps.GlobalConfig, logger, sdktelemetry.EnableTelemetry)
+	telemetryServer, err := telemetry.New[T](logger, sdktelemetry.EnableTelemetry, deps.GlobalConfig)
+	if err != nil {
+		return nil, err
+	}
+
+	swaggerServer, err := swagger.New[T](logger, docs.GetSwaggerFS(), deps.GlobalConfig)
 	if err != nil {
 		return nil, err
 	}
@@ -169,6 +177,7 @@ func InitRootCmd[T transaction.Tx](
 		telemetryServer,
 		restServer,
 		grpcgatewayServer,
+		swaggerServer,
 	)
 }
 
