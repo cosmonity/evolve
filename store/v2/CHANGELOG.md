@@ -25,6 +25,8 @@ Ref: https://keepachangelog.com/en/1.0.0/
 
 ## [Unreleased]
 
+* [#23013](https://github.com/cosmos/cosmos-sdk/pull/23013) Support memDB for sims
+
 ---
 
 Tags prior to Cosmonity fork:

@@ -7,6 +7,7 @@ import (
 	"iter"
 	"maps"
 	"math/rand"
+	"os"
 	"slices"
 	"testing"
 	"time"
@@ -18,6 +19,8 @@ import (
 
 	"go.cosmonity.xyz/evolve/runtime/v2"
 	"go.cosmonity.xyz/evolve/server/v2/appmanager"
+	"go.cosmonity.xyz/evolve/server/v2/cometbft"
+	"go.cosmonity.xyz/evolve/server/v2/streaming"
 	storev2 "go.cosmonity.xyz/evolve/store/v2"
 
 	"cosmossdk.io/core/appmodule"
@@ -29,6 +32,7 @@ import (
 	"cosmossdk.io/core/transaction"
 	"cosmossdk.io/depinject"
 	"cosmossdk.io/log"
+	"cosmossdk.io/schema/appdata"
 	consensustypes "cosmossdk.io/x/consensus/types"
 
 	"github.com/cosmos/cosmos-sdk/client"
@@ -47,6 +51,7 @@ type (
 	HasWeightedOperationsX              = simsx.HasWeightedOperationsX
 	HasWeightedOperationsXWithProposals = simsx.HasWeightedOperationsXWithProposals
 	HasProposalMsgsX                    = simsx.HasProposalMsgsX
+	HasLegacyProposalMsgs               = simsx.HasLegacyProposalMsgs
 )
 
 const SimAppChainID = "simulation-app"
@@ -117,6 +122,8 @@ type (
 		TXBuilder     simsxv2.TXBuilder[T]
 		AppManager    appmanager.AppManager[T]
 		ModuleManager ModuleManager
+		StreamManager streaming.Manager
+		StreamHook    *appdata.Listener
 	}
 
 	AppFactory[T Tx, V SimulationApp[T]] func(config depinject.Config, outputs ...any) (V, error)
@@ -283,11 +290,15 @@ func RunWithRandSourceX[T Tx](
 	defer done()
 
 	testInstance, chainState, accounts := setupChainStateFn(rootCtx, r)
-
-	emptySimParams := make(map[string]json.RawMessage) // todo read sims params from disk as before
+	customFactoryParams := make(map[string]json.RawMessage)
+	if tCfg.ParamsFile != "" {
+		bz, err := os.ReadFile(tCfg.ParamsFile)
+		require.NoError(tb, err)
+		require.NoError(tb, json.Unmarshal(bz, &customFactoryParams))
+	}
 
 	modules := testInstance.ModuleManager.Modules()
-	msgFactoriesFn := prepareSimsMsgFactories(r, modules, simsx.ParamWeightSource(emptySimParams))
+	msgFactoriesFn := prepareSimsMsgFactories(tb, r, modules, simsx.ParamWeightSource(customFactoryParams))
 
 	if b, ok := tb.(interface{ ResetTimer() }); ok {
 		b.ResetTimer()
@@ -321,7 +332,6 @@ func prepareInitialGenesisState[T Tx](
 	moduleManager ModuleManager,
 ) ([]simtypes.Account, json.RawMessage, string, time.Time) {
 	txConfig := app.TxConfig()
-	// todo: replace legacy testdata functions ?
 	appStateFn := simtestutil.AppStateFn(
 		app.AppCodec(),
 		txConfig.SigningContext().AddressCodec(),
@@ -444,9 +454,10 @@ func doMainLoop[T Tx](
 		}
 
 		cometInfo := comet.Info{
-			ValidatorsHash:  nil,
-			Evidence:        cs.ValsetHistory.MissBehaviour(r),
-			ProposerAddress: cs.ActiveValidatorSet[0].Address, // todo: pick random one
+			ValidatorsHash: nil,
+			Evidence:       cs.ValsetHistory.MissBehaviour(r),
+			// pick one of top 10
+			ProposerAddress: cs.ActiveValidatorSet[r.Intn(min(len(cs.ActiveValidatorSet), 10))].Address,
 			LastCommit:      cs.ActiveValidatorSet.NewCommitInfo(r),
 		}
 		fOps, pos := futureOpsReg.PopScheduledFor(cs.BlockTime), 0
@@ -489,6 +500,7 @@ func doMainLoop[T Tx](
 
 					tx, err := testInstance.TXBuilder.Build(ctx, testInstance.AuthKeeper, signers, msg, r, cs.ChainID)
 					require.NoError(tb, err)
+					blockReqN.Txs = append(blockReqN.Txs, tx)
 					if !yield(tx) {
 						return
 					}
@@ -510,6 +522,26 @@ func doMainLoop[T Tx](
 		}
 		txTotalCounter += txPerBlockCounter
 		cs.ActiveValidatorSet = cs.ActiveValidatorSet.Update(blockRsp.ValidatorUpdates)
+
+		if len(testInstance.StreamManager.Listeners) == 0 && testInstance.StreamHook == nil {
+			continue
+		}
+		// stream data
+		strmCtx, cancel := context.WithTimeout(rootCtx, time.Second)
+		rawTxs := simsx.Collect(blockReqN.Txs, func(a T) []byte { return a.Bytes() })
+		require.NoError(tb, cometbft.StreamOut[T](
+			strmCtx,
+			int64(blockReqN.Height),
+			rawTxs,
+			blockReqN.Txs,
+			*blockRsp,
+			changeSet,
+			testInstance.StreamManager,
+			testInstance.StreamHook,
+			true,
+			tb.Logf,
+		))
+		cancel()
 	}
 	fmt.Println("+++ reporter:\n" + rootReporter.Summary().String())
 	fmt.Printf("Tx total: %d skipped: %d\n", txTotalCounter, txSkippedCounter)
@@ -517,21 +549,19 @@ func doMainLoop[T Tx](
 
 // prepareSimsMsgFactories constructs and returns a function to retrieve simulation message factories for all modules.
 // It initializes proposal and factory registries, registers proposals and weighted operations, and sorts deterministically.
-func prepareSimsMsgFactories(
-	r *rand.Rand,
-	modules map[string]appmodulev2.AppModule,
-	weights simsx.WeightSource,
-) func() simsx.SimMsgFactoryX {
+func prepareSimsMsgFactories(tb testing.TB, r *rand.Rand, modules map[string]appmodulev2.AppModule, weights simsx.WeightSource) func() simsx.SimMsgFactoryX {
+	tb.Helper()
 	moduleNames := slices.Collect(maps.Keys(modules))
 	slices.Sort(moduleNames) // make deterministic
 
 	// get all proposal types
 	proposalRegistry := simsx.NewUniqueTypeRegistry()
 	for _, n := range moduleNames {
-		switch xm := modules[n].(type) { // nolint: gocritic // extended in the future
+		switch xm := modules[n].(type) {
 		case HasProposalMsgsX:
 			xm.ProposalMsgsX(weights, proposalRegistry)
-			// todo: register legacy and v1 msg proposals
+		case HasLegacyProposalMsgs:
+			tb.Logf("Ignoring legacy proposal messages for module: %s", n)
 		}
 	}
 	// register all msg factories
