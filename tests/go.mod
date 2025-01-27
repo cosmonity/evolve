@@ -45,7 +45,7 @@ require (
 	go.cosmonity.xyz/evolve/runtime/v2 v2.0.0-20240911143651-72620a577660
 	go.cosmonity.xyz/evolve/server/v2/stf v1.0.0-beta.2
 	go.cosmonity.xyz/evolve/store/v2 v2.0.0-beta.1
-	google.golang.org/grpc v1.69.4
+	google.golang.org/grpc v1.70.0
 	google.golang.org/protobuf v1.36.3
 	gotest.tools/v3 v3.5.1
 	pgregory.net/rapid v1.1.0
