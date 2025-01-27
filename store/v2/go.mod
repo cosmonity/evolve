@@ -7,7 +7,7 @@ require (
 	cosmossdk.io/core/testing v0.0.1
 	cosmossdk.io/errors/v2 v2.0.0
 	cosmossdk.io/log v1.5.0
-	github.com/cockroachdb/pebble v1.1.3
+	github.com/cockroachdb/pebble v1.1.4
 	github.com/cosmos/cosmos-proto v1.0.0-beta.5
 	github.com/cosmos/gogoproto v1.7.0
 	github.com/cosmos/iavl v1.3.5
