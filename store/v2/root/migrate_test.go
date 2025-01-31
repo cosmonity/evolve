@@ -11,9 +11,7 @@ import (
 	"go.cosmonity.xyz/evolve/store/v2/commitment"
 	"go.cosmonity.xyz/evolve/store/v2/commitment/iavl"
 	dbm "go.cosmonity.xyz/evolve/store/v2/db"
-	"go.cosmonity.xyz/evolve/store/v2/migration"
 	"go.cosmonity.xyz/evolve/store/v2/pruning"
-	"go.cosmonity.xyz/evolve/store/v2/snapshots"
 
 	corestore "cosmossdk.io/core/store"
 	coretesting "cosmossdk.io/core/testing"
@@ -67,14 +65,10 @@ func (s *MigrateStoreTestSuite) SetupTest() {
 	sc, err := commitment.NewCommitStore(multiTrees1, nil, dbm.NewMemDB(), testLog)
 	s.Require().NoError(err)
 
-	snapshotsStore, err := snapshots.NewStore(s.T().TempDir())
-	s.Require().NoError(err)
-	snapshotManager := snapshots.NewManager(snapshotsStore, snapshots.NewSnapshotOptions(1500, 2), orgSC, nil, testLog)
-	migrationManager := migration.NewManager(dbm.NewMemDB(), snapshotManager, sc, testLog)
 	pm := pruning.NewManager(sc, nil)
 
 	// assume no storage store, simulate the migration process
-	s.rootStore, err = New(dbm.NewMemDB(), testLog, orgSC, pm, migrationManager, nil)
+	s.rootStore, err = New(dbm.NewMemDB(), testLog, orgSC, pm, nil)
 	s.Require().NoError(err)
 }
 

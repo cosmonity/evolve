@@ -25,6 +25,7 @@ Ref: https://keepachangelog.com/en/1.0.0/
 
 ## [Unreleased]
 
+* [#23568](https://github.com/cosmos/cosmos-sdk/pull/23568) Remove auto migration and fix restore cmd
 * [#23013](https://github.com/cosmos/cosmos-sdk/pull/23013) Support memDB for sims
 * [#23552](https://github.com/cosmos/cosmos-sdk/pull/23552) Fix pebbleDB integration
 
