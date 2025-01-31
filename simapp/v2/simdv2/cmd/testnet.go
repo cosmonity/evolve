@@ -19,6 +19,7 @@ import (
 	"go.cosmonity.xyz/evolve/server/v2/api/grpc"
 	"go.cosmonity.xyz/evolve/server/v2/api/grpcgateway"
 	"go.cosmonity.xyz/evolve/server/v2/api/rest"
+	"go.cosmonity.xyz/evolve/server/v2/api/swagger"
 	"go.cosmonity.xyz/evolve/server/v2/api/telemetry"
 	"go.cosmonity.xyz/evolve/server/v2/cometbft"
 	"go.cosmonity.xyz/evolve/server/v2/store"
@@ -189,6 +190,7 @@ func initTestnetFiles[T transaction.Tx](
 		grpcPort      = 9090
 		restPort      = 8080
 		telemetryPort = 7180
+		swaggerPort   = 8090
 	)
 	p2pPortStart := 26656
 
@@ -200,6 +202,7 @@ func initTestnetFiles[T transaction.Tx](
 		grpcgatewayConfig := grpcgateway.DefaultConfig()
 		restConfig := rest.DefaultConfig()
 		telemetryConfig := telemetry.DefaultConfig()
+		swaggerConfig := swagger.DefaultConfig()
 
 		if args.singleMachine {
 			portOffset = i
@@ -228,6 +231,11 @@ func initTestnetFiles[T transaction.Tx](
 			telemetryConfig = &telemetry.Config{
 				Enable:  true,
 				Address: fmt.Sprintf("127.0.0.1:%d", telemetryPort+portOffset),
+			}
+
+			swaggerConfig = &swagger.Config{
+				Enable:  true,
+				Address: fmt.Sprintf("127.0.0.1:%d", swaggerPort+portOffset),
 			}
 		}
 
@@ -365,7 +373,8 @@ func initTestnetFiles[T transaction.Tx](
 		grpcgatewayServer := grpcgateway.NewWithConfigOptions[T](grpcgateway.OverwriteDefaultConfig(grpcgatewayConfig))
 		restServer := rest.NewWithConfigOptions[T](rest.OverwriteDefaultConfig(restConfig))
 		telemetryServer := telemetry.NewWithConfigOptions[T](telemetry.OverwriteDefaultConfig(telemetryConfig))
-		server := serverv2.NewServer[T](serverCfg, cometServer, storeServer, grpcServer, grpcgatewayServer, restServer, telemetryServer)
+		swaggerServer := swagger.NewWithConfigOptions[T](swagger.OverwriteDefaultConfig(swaggerConfig))
+		server := serverv2.NewServer[T](serverCfg, cometServer, storeServer, grpcServer, grpcgatewayServer, restServer, telemetryServer, swaggerServer)
 		err = server.WriteConfig(filepath.Join(nodeDir, "config"))
 		if err != nil {
 			return err
