@@ -1,7 +1,6 @@
 module github.com/cosmos/cosmos-sdk/tests
 
 go 1.23.4
-
 require (
 	cosmossdk.io/api v0.8.2
 	cosmossdk.io/collections v1.0.0
@@ -29,7 +28,7 @@ require (
 	cosmossdk.io/x/staking v0.2.0-rc.1.0.20250118222626-4c47d8dddde3
 	cosmossdk.io/x/tx v1.1.0
 	cosmossdk.io/x/upgrade v0.2.0-rc.1
-	github.com/cometbft/cometbft v1.0.0
+	github.com/cometbft/cometbft v1.0.1
 	github.com/cometbft/cometbft/api v1.0.0
 	github.com/cosmos/cosmos-db v1.1.1
 	github.com/cosmos/cosmos-proto v1.0.0-beta.5
@@ -104,8 +103,8 @@ require (
 	github.com/danieljoos/wincred v1.2.1 // indirect
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
 	github.com/decred/dcrd/dcrec/secp256k1/v4 v4.3.0 // indirect
-	github.com/dgraph-io/badger/v4 v4.5.0 // indirect
-	github.com/dgraph-io/ristretto/v2 v2.0.0 // indirect
+	github.com/dgraph-io/badger/v4 v4.5.1 // indirect
+	github.com/dgraph-io/ristretto/v2 v2.1.0 // indirect
 	github.com/dustin/go-humanize v1.0.1 // indirect
 	github.com/dvsekhvalnov/jose2go v1.6.0 // indirect
 	github.com/emicklei/dot v1.6.2 // indirect
@@ -123,7 +122,7 @@ require (
 	github.com/golang/protobuf v1.5.4 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/google/btree v1.1.3 // indirect
-	github.com/google/flatbuffers v24.3.25+incompatible // indirect
+	github.com/google/flatbuffers v24.12.23+incompatible // indirect
 	github.com/google/orderedcode v0.0.1 // indirect
 	github.com/google/s2a-go v0.1.9 // indirect
 	github.com/google/uuid v1.6.0 // indirect
