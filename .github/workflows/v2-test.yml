@@ -44,6 +44,7 @@ jobs:
       - name: test
         run: |
           cd server/v2 && go test -mod=readonly -race -timeout 30m
+
   stf:
     runs-on: ubuntu-latest
     strategy:
@@ -91,6 +92,22 @@ jobs:
       - name: test
         run: |
           cd server/v2/cometbft && go test -mod=readonly -race -timeout 30m
+
+  store-v2:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "stable"
+          check-latest: true
+          cache: true
+          cache-dependency-path: go.sum
+      - name: test
+        run: |
+          cd store/v2 && go test -mod=readonly -race -timeout 30m
 
   test-system-v2:
     runs-on: ubuntu-latest
