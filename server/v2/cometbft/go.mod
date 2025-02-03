@@ -24,7 +24,7 @@ require (
 	github.com/cosmos/cosmos-sdk v0.52.0
 	github.com/cosmos/gogoproto v1.7.0
 	github.com/spf13/cobra v1.8.1
-	github.com/spf13/pflag v1.0.5
+	github.com/spf13/pflag v1.0.6
 	github.com/stretchr/testify v1.10.0
 	go.cosmonity.xyz/evolve/server/v2 v2.0.0-beta.1
 	go.cosmonity.xyz/evolve/server/v2/appmanager v1.0.0-beta.2
