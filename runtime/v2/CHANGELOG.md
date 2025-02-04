@@ -22,6 +22,8 @@ Each entry must include the Github issue reference in the following format:
 
 ## [Unreleased]
 
+* [#23607](https://github.com/cosmos/cosmos-sdk/pull/23607) Register runtime services properly.
+
 ---
 
 Tags prior to Cosmonity fork:
