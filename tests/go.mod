@@ -6,7 +6,7 @@ require (
 	cosmossdk.io/api v0.8.2
 	cosmossdk.io/collections v1.0.0
 	cosmossdk.io/core v1.0.0
-	cosmossdk.io/core/testing v0.0.2-0.20250117224339-f9bb1803f185
+	cosmossdk.io/core/testing v0.0.2
 	cosmossdk.io/depinject v1.1.0
 	cosmossdk.io/log v1.5.0
 	cosmossdk.io/math v1.5.0
@@ -36,10 +36,11 @@ require (
 	github.com/cosmos/cosmos-sdk v0.52.0
 	github.com/cosmos/gogoproto v1.7.0
 	github.com/gogo/protobuf v1.3.2 // indirect
+	github.com/golang/mock v1.6.0
 	github.com/google/go-cmp v0.6.0
 	github.com/google/gofuzz v1.2.0
 	github.com/spf13/cobra v1.8.1 // indirect
-	github.com/spf13/viper v1.19.0
+	github.com/spf13/viper v1.19.0 // indirect
 	github.com/stretchr/testify v1.10.0
 	gitlab.com/yawning/secp256k1-voi v0.0.0-20230925100816-f2616030848b
 	go.cosmonity.xyz/evolve/runtime/v2 v2.0.0-20240911143651-72620a577660
@@ -50,8 +51,6 @@ require (
 	gotest.tools/v3 v3.5.1
 	pgregory.net/rapid v1.1.0
 )
-
-require github.com/golang/mock v1.6.0
 
 require (
 	buf.build/gen/go/cometbft/cometbft/protocolbuffers/go v1.36.4-20241120201313-68e42a58b301.1 // indirect
