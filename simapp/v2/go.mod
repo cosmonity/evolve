@@ -48,7 +48,7 @@ require (
 	go.cosmonity.xyz/evolve/server/v2/appmanager v1.0.0-beta.2
 	go.cosmonity.xyz/evolve/server/v2/cometbft v0.0.0-20241015140036-ee3d320eaa55
 	go.cosmonity.xyz/evolve/store/v2 v2.0.0
-	google.golang.org/protobuf v1.36.4
+	google.golang.org/protobuf v1.36.5
 )
 
 require (
