@@ -1,6 +1,8 @@
 module go.cosmonity.xyz/evolve/runtime/v2
 
-go 1.23
+go 1.23.1
+
+toolchain go1.24.0
 
 // server v2 integration (uncomment during development, but comment before release)
 replace (
@@ -22,13 +24,13 @@ require (
 	go.cosmonity.xyz/evolve/server/v2/stf v1.0.0-beta.2
 	go.cosmonity.xyz/evolve/store/v2 v2.0.0-beta.1
 	google.golang.org/grpc v1.70.0
-	google.golang.org/protobuf v1.36.4
+	google.golang.org/protobuf v1.36.5
 )
 
 require (
 	buf.build/gen/go/cometbft/cometbft/protocolbuffers/go v1.36.4-20241120201313-68e42a58b301.1 // indirect
 	buf.build/gen/go/cosmos/gogo-proto/protocolbuffers/go v1.36.4-20240130113600-88ef6483f90f.1 // indirect
-	cosmossdk.io/core/testing v0.0.1 // indirect
+	cosmossdk.io/core/testing v0.0.2 // indirect
 	cosmossdk.io/errors/v2 v2.0.0 // indirect
 	github.com/DataDog/zstd v1.5.5 // indirect
 	github.com/aybabtme/uniplot v0.0.0-20151203143629-039c559e5e7e // indirect
